@@ -29,18 +29,3 @@ int main() {
 
     return 0;
 }
-
-/*
- * first--;
-        int ma[8]={0};
-        for(int j=0;j<day;++j)
-        {
-            ma[first]++;
-            first++;
-            if(first>=7)
-                first=0;
-        }
-        for(int j=1;j<7;++j)
-            cout<<ma[j]<<" ";
-        cout<<ma[0];
- */

@@ -4,8 +4,8 @@
 #include <string.h>
 
 UI* createUI(Controller* c){
-	UI* ui = (UI*)malloc(sizeof(UI));
-	ui->ctrl = c;
+	UI* ui = (UI*)malloc(sizeof(UI)); //allocating space for the ui
+	ui->ctrl = c; //making the controller of the controller the controller we gave
 	return ui;
 }
 
@@ -18,7 +18,6 @@ void destroyUI(UI * ui){
 
 /*
 	Prints the available menu for the problem
-	Input: -
 	Output: the menu is printed at the console
 */
 void printMenu(){
@@ -62,16 +61,17 @@ int getInteger(const char* message)
 	}
 	return res;
 }
-
+//getting a command and verifying it
 int getCmd() {
     int cmd = getInteger("Give command: ");
-    if (cmd >=1 || cmd <=4)
+    if (cmd >=0 && cmd <=5)
         return cmd;
     return -1;
 }
 
 void readStringWithSpaces(const char* message, size_t maxStrSize, char str[])
 {
+	//prints the message we got
 	printf("%s\n",message);
 	fgets(str, maxStrSize, stdin);
 	// the newline is also read so we must eliminate it from the string
@@ -96,40 +96,52 @@ int addCountryUI(UI* ui){
 	// read the country's data
 	char name[50], continent[50];
 	int population;
+	//reading the values we need
 	readString("Please input the name: ", name);
     readString("Please input the continent: ",continent);
 	printf("Please input the population: ");
 	scanf("%d", &population);
-
+	//we add a country
+	//we pass to the function the atributes separated
+	//return 1 if succeded and 0 if failed
 	return addCountryCtrl(ui->ctrl, name, continent, population);
 }
 
 int deleteCountryUI(UI* ui){
 	// read the name of the country to be deleted
 	char name[50];
+	//reading the value we need
 	readString("Please input the name of country you want to delete: ", name);
-
+	//we destroy a contry by the name
+	//return 1 if succeded and 0 if failed
 	return deleteCountryCtrl(ui->ctrl, name);
 }
 
 int updateCountryUI(UI* ui){
     char name[50],newName[50],newContinent[50];
+	//reading the values we need
     printf("If you don't want to modify the name or the continent write null in either case\n");
     printf("If you don't want to change the population write -1 when it comes up\n");
     readString("Please input the name of the country you want to update: ", name);
     readString("Please input the new name: ", newName);
     readString("Please input the new continent: ", newContinent);
     int newPopulation=getInteger("Please input the new population: ");
+	//we pass to the function the atributes separated
+	//the "name" atribute is the name of the country we need to update
+	//return 1 if succeded and 0 if failed
     return updateCountryCtrl(ui->ctrl,name,newName,newContinent,newPopulation);
 }
 
 
 void listAllCountry(UI* ui){
+	//creating a repo to save the countries we need to print
     Repo* repo=getRepo(ui->ctrl);
 	int length = getRepoLength(repo);
+	//if we don't have any countries in the repo
 	if (length == 0){
         printf("There are no country with that string.");
 	}
+	//we go though the repository and print each country
     for (int i = 0; i < getRepoLength(repo); i++){
         char str[200];
         toString(getCountryOnPos(repo, i), str);
@@ -141,6 +153,7 @@ void listCountryString(UI* ui,char* what){
     // if(what=='\0'){
     //     listAllCountry(ui);
     // }
+	//we create a repository with the special condition
 	Repo* repo = getRepoString(ui->ctrl,what);
 	int length = getRepoLength(repo);
 	if (length == 0){
@@ -153,20 +166,27 @@ void listCountryString(UI* ui,char* what){
     		printf("%s\n", str);
     	}
     }
+	//we destroy the we repo
 	destroyRepo(repo);
 }
 
 void startUI(UI* ui){
+	//we do this loop until the command is 0
 	while (1){
 		printMenu();
+		//we read the command
 		int cmd = getCmd();
+		//we read the command until is a valid one
 		while (cmd == -1){
 			printf("Please input a valid command!\n");
 			cmd = getCmd();
 		}
+		//we exit the while loop
 		if (cmd == 0)
 			break;
 		switch (cmd){
+			//we go through all of the menu option
+			//and also verify if it can be done
     		case 1:
     		{
     			int res = addCountryUI(ui);

@@ -1,8 +1,7 @@
 #pragma once
 #include "../domain/domain.h"
-#define CAPACITY 10
 
-typedef Country *Element;
+typedef Country *Element; // a more generic name for an array elements
 
 typedef struct {
   Element *elems;
@@ -10,12 +9,12 @@ typedef struct {
   int capacity; // maximum capacity of the array
 } Arrays;
 
-Arrays *createArrays(int capacity);
-void destroy(Arrays *arr);
-void addToArray(Arrays *arr, Element t);
+Arrays *createArrays(int capacity); // creating array
+void destroy(Arrays *arr);          // destroing array
 
-void delete (Arrays *arr, int pos);
+void addToArray(Arrays *arr, Element t); // adding an element to the array
+void delete (Arrays *arr, int pos);      // deleting an element from the array
 
-int getLength(Arrays *arr);
-
-Element getCountry(Arrays *arr, int pos);
+int getLength(Arrays *arr); // getting the lenght of a certain array
+Element getCountry(Arrays *arr,
+                   int pos); // getting an element from a position in a array

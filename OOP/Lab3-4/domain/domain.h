@@ -1,14 +1,15 @@
 #pragma once
 
 typedef struct {
-  char *name;
-  char *continent;
-  int population;
+  char *name;      // pointer to the name of the country
+  char *continent; // pointer to the continent of the country
+  int population;  // population of the country
 } Country;
 
-Country *createCountry(char *name, char *continent, int population);
-void destroyCountry(Country *country);
-Country *copyCountry(Country *co);
+Country *createCountry(char *name, char *continent,
+                       int population); // creating country
+void destroyCountry(Country *country);  // destroing a certain country
+Country *copyCountry(Country *co);      // coping a country
 
 char *getName(Country *co);
 char *getContinent(Country *co);

@@ -1,6 +1,7 @@
 #include "controller.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 Controller* createController(Repo* r)
 {
@@ -26,9 +27,30 @@ int addCountryCtrl(Controller* c, char* name, char* continent, int population)
 	return res;
 }
 
-Repo* getRepoString(Controller* c)
+int deleteCountryCtrl(Controller* c, char* name)
 {
-	return c->repo;
+	return deleteCountry(c->repo,name);
+}
+
+int updateCountryCtrl(Controller *c, char *name, char *newName, char *newContinent, int newPopulation)
+{
+	return updateCountry(c->repo,name,newName,newContinent,newPopulation);
+}
+
+Repo* getRepoString(Controller* c,char what[])
+{
+	Repo* res = createRepo();
+	for (int i = 0; i < getRepoLength(c->repo); i++)
+	{
+		Country* co = getCountryOnPos(c->repo, i);
+		if (strstr(getName(co), what) != NULL)
+		{
+			Country* newCountry = createCountry(co->name, co->continent, co->population);
+			addCountry(res, newCountry);
+		}
+	}
+	printf("%d\n",getRepoLength(res));
+	return res;
 }
 
 

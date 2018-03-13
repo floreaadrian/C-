@@ -3,15 +3,19 @@
 #include "../domain/domain.h"
 
 typedef struct {
-  Arrays *countrys;
+  Arrays *countries;
 } Repo;
 
 Repo *createRepo();
 void destroyRepo(Repo *v);
 Country *find(Repo *v, char *name);
-int checkContinent(char *conti);
 int findPosOfCountry(Repo *v, char *name);
-int addCountry(Repo *v, Country *p);
-void deleteCountry(Repo *v, char *name);
+int checkContinent(char *conti);
+
 int getRepoLength(Repo *v);
 Country *getCountryOnPos(Repo *v, int pos);
+
+int addCountry(Repo *v, Country *p);
+int deleteCountry(Repo *v, char *name);
+int updateCountry(Repo *v, char *name, char *newName, char *newContinent,
+                  int newPopulation);

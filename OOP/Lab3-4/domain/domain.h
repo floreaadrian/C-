@@ -12,5 +12,5 @@ Country *copyCountry(Country *co);
 
 char *getName(Country *co);
 char *getContinent(Country *co);
-double getPopulation(Country *co);
+int getPopulation(Country *co);
 void toString(Country *co, char str[]);

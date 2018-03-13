@@ -51,6 +51,8 @@ int addCountry(Repo* v, Country* co)
 		return 0;
     if (checkContinent(co->continent) == -1)
         return 0;
+	if(co->population<=0)
+		return 0;
 	// a copy of the Country which was passed will be stored, such that the memory for the Country can be deallocated where it was allocated (in Controller)
 	// and the Repository will handle its own memory
 	Country* copy = copyCountry(co);
@@ -112,7 +114,9 @@ int updateCountry(Repo *v, char *name, char *newName, char *newContinent, int ne
     		return 0;
     deleteCountry(v,name);
     co = createCountry(newName, newContinent, newPopulation);
-    return addCountry(v,co);
+    int ok = addCountry(v,co);
+	destroyCountry(co);
+	return ok;
 }
 
 int getRepoLength(Repo* v)

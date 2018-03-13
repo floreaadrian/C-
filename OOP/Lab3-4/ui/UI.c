@@ -153,6 +153,7 @@ void listCountryString(UI* ui,char* what){
     		printf("%s\n", str);
     	}
     }
+	destroyRepo(repo);
 }
 
 void startUI(UI* ui){

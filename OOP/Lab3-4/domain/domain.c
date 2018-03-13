@@ -44,7 +44,7 @@ char* getContinent(Country* co)
 	return co->continent;
 }
 
-double getPopulation(Country* co)
+int getPopulation(Country* co)
 {
 	return co->population;
 }

@@ -22,13 +22,7 @@ int addCountryCtrl(Controller* c, char* name, char* continent, int population)
 	Country* co = createCountry(name, continent, population);
 
 	int res = addCountry(c->repo, co);
-
-	if (res == 1) // if the Country was successfully added - get rid of it from the memory
-	{
-        // destroy the Country that was just created, as the repository stored a copy
-    	destroyCountry(co);
-	}
-
+	destroyCountry(co);
 	return res;
 }
 

@@ -2,6 +2,8 @@
 #include "ui/UI.h"
 
 int main(){
+	testsRepo();
+	testsDynamicArray();
 	Repo* repo = createRepo(); //we create a reop for the controller
 	Controller* ctrl = createController(repo); // we create a controller for the ui
 

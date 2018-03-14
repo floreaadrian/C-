@@ -1,5 +1,7 @@
 #include "../Array/array.h"
 #include <stdlib.h>
+#include <string.h>
+#include <assert.h>
 
 Arrays* createArrays(int capacity)
 {
@@ -96,4 +98,41 @@ int getLength(Arrays* arr)
 Element getCountry(Arrays* arr, int pos)
 {
 	return arr->elems[pos];
+}
+
+void testsDynamicArray()
+{
+	Arrays* da = createArrays(2);
+	if (da == NULL)
+		assert(0);
+
+	assert(da->capacity == 2);
+	assert(da->length == 0);
+
+	Country* c1 = createCountry("Romania", "Europa", 19);
+	addToArray(da, c1);
+	assert(da->length == 1);
+
+	Country* c2 = createCountry("Elvetia", "Europa", 20);
+	addToArray(da, c2);
+	assert(da->length == 2);
+
+	// capacity must double
+	Country* c3 = createCountry("Ghana", "Africa", 30);
+	addToArray(da, c3);
+	assert(da->length == 3);
+	assert(da->capacity == 4);
+
+	// delete Country on position 0
+	// first get the pointer to the Country, to still be able to access the pointed memory
+	Country* c = getCountry(da, 0);
+	delete(da, 0);
+	destroyCountry(c); // What is another option for implementing the function "delete" to make sure that the Country is destroyed inside?
+
+	c = getCountry(da, 0);
+	assert(strcmp(getName(c), "Elvetia") == 0);
+	assert(da->length == 2);
+
+	// destroy the dynamic array - this will also destroy the Countrys
+	destroy(da);
 }

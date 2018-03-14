@@ -1,6 +1,7 @@
 #include "repo.h"
 #include <stdlib.h>
 #include <string.h>
+#include <assert.h>
 
 Repo* createRepo()
 {
@@ -98,7 +99,7 @@ int deleteCountry(Repo* v, char* symbol)
     return 1;
 }
 
-int updateCountry(Repo *v, char *name, char *newName, char *newContinent, int newPopulation){
+int updateCountry(Repo *v, char* name, char* newName, char* newContinent, int newPopulation){
     if (v == NULL)
 		return 0;
 
@@ -151,4 +152,75 @@ Country* getCountryOnPos(Repo* v, int pos)
 		return NULL;
 	//we return a country from a certain position
 	return getCountry(v->countries, pos);
+}
+
+
+// Tests
+void testAdd()
+{
+	Repo* r = createRepo();
+
+	Country* c1 = createCountry("Romania", "Europa", 19);
+	addCountry(r, c1);
+	assert(getRepoLength(r) == 1);
+	assert(strcmp(getName(getCountryOnPos(r, 0)), "Romania") == 0);
+
+	Country* c2 = createCountry("Uganda", "Africa", 41);
+	assert(addCountry(r, c2) == 1);
+	assert(getRepoLength(r) == 2);
+
+	// now try to add the same Country again -> add must return 0
+	assert(addCountry(r, c2) == 0);
+
+	// destroy the test repository
+	destroyRepo(r);
+
+	// now the memory allocated for the countries must be freed
+	destroyCountry(c1);
+	destroyCountry(c2);
+}
+
+void testDelete()
+{
+	Repo* r = createRepo();
+
+	Country* c1 = createCountry("Romania", "Europa", 19);
+	addCountry(r, c1);
+	Country* c2 = createCountry("Uganda", "Africa", 41);
+	addCountry(r, c2);
+	assert(getRepoLength(r) == 2);
+	assert(deleteCountry(r,"Romania")==1);
+	assert(getRepoLength(r) == 1);
+	assert(deleteCountry(r,"France")==0);
+	// destroy the test repository
+	destroyRepo(r);
+	// now the memory allocated for the countries must be freed
+	destroyCountry(c1);
+	destroyCountry(c2);
+}
+
+void testUpdate()
+{
+	Repo* r = createRepo();
+
+	Country* c1 = createCountry("Romania", "Europa", 19);
+	addCountry(r, c1);
+	Country* c2 = createCountry("Uganda", "Africa", 41);
+	addCountry(r, c2);
+	assert(getRepoLength(r) == 2);
+	assert(updateCountry(r,"Romania","Elvetia","null",-1)==1);
+	assert(getRepoLength(r) == 1);
+	assert(updateCountry(r,"Uganda","Romania","null",32)==0);
+	// destroy the test repository
+	destroyRepo(r);
+	// now the memory allocated for the countries must be freed
+	destroyCountry(c1);
+	destroyCountry(c2);
+}
+
+void testsRepo()
+{
+	testAdd();
+	testDelete();
+//	testUpdate();
 }

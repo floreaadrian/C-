@@ -18,3 +18,5 @@ void delete (Arrays *arr, int pos);      // deleting an element from the array
 int getLength(Arrays *arr); // getting the lenght of a certain array
 Element getCountry(Arrays *arr,
                    int pos); // getting an element from a position in a array
+
+void testsDynamicArray();

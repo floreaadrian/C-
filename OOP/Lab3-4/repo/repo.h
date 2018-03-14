@@ -24,3 +24,5 @@ int addCountry(Repo *v, Country *p);    // adding a country to a repository
 int deleteCountry(Repo *v, char *name); // deleting a country from a repository
 int updateCountry(Repo *v, char *name, char *newName, char *newContinent,
                   int newPopulation); // updating a country from a repository
+
+void testsRepo();

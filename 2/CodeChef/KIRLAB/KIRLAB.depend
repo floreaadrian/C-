@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1480693446 source:d:\codes\codechef\kirlab\main.cpp
+	<iostream>
+	<algorithm>
+	<stdio.h>
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1474826199 source:d:\codes\hackerearth\graph1\main.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+	<queue>
+	<string.h>
+	<algorithm>
+	<bitset>
+

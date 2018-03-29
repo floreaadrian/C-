@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1453919363 source:d:\codes\infoarena\flux maxim\main.cpp
+	<fstream>
+	<vector>
+	<bitset>
+	<queue>
+

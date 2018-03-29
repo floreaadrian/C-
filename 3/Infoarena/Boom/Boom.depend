@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1485798401 source:d:\codes\infoarena\boom\main.cpp
+	<fstream>
+	<vector>
+	<bitset>
+	<queue>
+	<cassert>
+

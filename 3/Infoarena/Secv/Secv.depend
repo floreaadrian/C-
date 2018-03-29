@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1454424465 source:d:\codes\infoarena\secv\main.cpp
+	<fstream>
+	<algorithm>
+	<bitset>
+

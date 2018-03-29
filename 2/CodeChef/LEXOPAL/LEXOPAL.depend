@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1473431030 source:d:\codes\codechef\lexopal\main.cpp
+	<iostream>
+	<string.h>
+

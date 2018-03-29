@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1475771311 source:d:\codes\bac\s4\main.cpp
+	<iostream>
+	<string.h>
+

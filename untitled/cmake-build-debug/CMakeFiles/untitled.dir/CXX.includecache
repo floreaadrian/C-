@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/adrianflorea/CLionProjects/untitled/cmake-build-debug/GIT01.cpp
+iostream
+-
+
+/Users/adrianflorea/CLionProjects/untitled/main.cpp
+iostream
+-
+queue
+-
+

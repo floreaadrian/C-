@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1474715933 source:d:\codes\hackerearth\algo\main.cpp
+	<iostream>
+	<stdio.h>
+	<algorithm>
+	<vector>
+

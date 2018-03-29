@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1488010037 source:d:\codes\infoarena\apdm\main.cpp
+	<fstream>
+	<vector>
+	<bitset>
+	<queue>
+	<string.h>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1453919719 source:d:\codes\infoarena\taramul nicaieri\main.cpp
+	<fstream>
+	<vector>
+	<bitset>
+	<queue>
+	<algorithm>
+

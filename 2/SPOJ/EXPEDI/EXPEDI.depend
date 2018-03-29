@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1453835872 source:d:\codes\spoj\expedi\main.cpp
+	<cstdio>
+	<stdlib.h>
+	<limits.h>
+	<iostream>
+	<cstdlib>
+	<string>
+	<cstring>
+	<algorithm>
+	<cmath>
+	<map>
+	<queue>
+	<vector>
+

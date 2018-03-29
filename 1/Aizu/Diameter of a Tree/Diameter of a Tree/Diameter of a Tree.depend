@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1454225570 source:d:\codes\aizu\diameter of a tree\diameter of a tree\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

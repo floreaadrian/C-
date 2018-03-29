@@ -70,6 +70,14 @@ void addToArray(Arrays* arr, Element t)
 	arr->elems[arr->length++] = t;
 }
 
+void exchange(Arrays* arr,int i,int j)
+{
+	Country *co=createCountry("Null","null",1);
+	co=arr->elems[i];
+	arr->elems[i]=arr->elems[j];
+	arr->elems[j]=co;
+}
+
 void delete(Arrays* arr, int pos)
 {
 	//if we don't have an array we can't delete it
@@ -117,22 +125,18 @@ void testsDynamicArray()
 	addToArray(da, c2);
 	assert(da->length == 2);
 
-	// capacity must double
 	Country* c3 = createCountry("Ghana", "Africa", 30);
 	addToArray(da, c3);
 	assert(da->length == 3);
 	assert(da->capacity == 4);
 
-	// delete Country on position 0
-	// first get the pointer to the Country, to still be able to access the pointed memory
 	Country* c = getCountry(da, 0);
 	delete(da, 0);
-	destroyCountry(c); // What is another option for implementing the function "delete" to make sure that the Country is destroyed inside?
+	destroyCountry(c);
 
 	c = getCountry(da, 0);
 	assert(strcmp(getName(c), "Elvetia") == 0);
 	assert(da->length == 2);
 
-	// destroy the dynamic array - this will also destroy the Countrys
 	destroy(da);
 }

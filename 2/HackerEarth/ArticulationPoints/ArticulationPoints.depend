@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1474998670 source:d:\codes\hackerearth\articulationpoints\main.cpp
+	<iostream>
+	<vector>
+	<stdio.h>
+	<bitset>
+	<algorithm>
+

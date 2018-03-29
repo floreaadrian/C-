@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1457175903 source:d:\codes\uva\924 - spreading the news\main.cpp
+	<iostream>
+	<algorithm>
+	<cstdio>
+	<cstring>
+	<vector>
+	<queue>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1459788026 source:d:\codes\codechef\devgostr\main.cpp
+	<iostream>
+	<cstring>
+	<vector>
+	<string>
+

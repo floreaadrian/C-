@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1485070929 source:d:\codes\infoarena\easygraph\main.cpp
+	<fstream>
+	<vector>
+	<bitset>
+	<algorithm>
+	<string.h>
+	<cassert>
+	<set>
+

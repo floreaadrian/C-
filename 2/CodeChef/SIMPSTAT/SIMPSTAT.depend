@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1459002112 source:d:\codes\codechef\simpstat\main.cpp
+	<iostream>
+	<algorithm>
+	<iomanip>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1460654443 source:d:\codes\sgu\271. book pile\main.cpp
+	<iostream>
+	<queue>
+	<vector>
+	<string.h>
+	<algorithm>
+

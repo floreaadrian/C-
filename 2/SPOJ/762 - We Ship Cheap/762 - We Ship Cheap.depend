@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1457175063 source:d:\codes\spoj\762 - we ship cheap\main.cpp
+	<iostream>
+	<string.h>
+	<map>
+	<queue>
+	<vector>
+

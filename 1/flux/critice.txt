@@ -1,0 +1,86 @@
+#include <fstream>
+#include <vector>
+#include <bitset>
+#include <queue>
+#include <algorithm>
+#include <utility>
+#include <string.h>
+ 
+#define DEBUG
+ 
+using namespace std;
+ 
+ifstream cin("critice.in");
+ofstream cout("critice.out");
+ 
+ 
+const int MAXN = 1005;
+const int MAXM = 10005;
+const int oo = (1<<31)-1;
+ 
+typedef vector<int> Graph[MAXN];
+typedef vector<int> :: iterator It;
+ 
+Graph G;
+bitset <MAXN> Used, Source, Sink;
+queue <int> Q, Critic;
+int N, M, C[MAXN][MAXN], F[MAXN][MAXN], Gather[MAXN], Father[MAXN];
+pair<int, int> Vertex[MAXM];
+ 
+inline bool BFs() {
+    int Node;
+    Used.reset();
+    for(Q.push(1), Node = 1, Used[Node] = true ; !Q.empty() ; Q.pop(), Node = Q.front())
+        for(It it = G[Node].begin(), fin = G[Node].end() ; it != fin ; ++ it)
+            if(!Used[*it] && F[Node][*it] < C[Node][*it])
+                Used[*it] = true, Q.push(*it), Father[*it] = Node;
+    return Used[N];
+}
+inline void BFs(int Node, bitset<MAXN> &Use){
+    for(Q.push(Node), Use[Node] = true; !Q.empty() ; Q.pop(), Node = Q.front())
+        for(It it = G[Node].begin(), fin = G[Node].end(); it != fin ; ++ it)
+            if(!Use[*it] && (C[Node][*it] >  (F[Node][*it] < 0 ? -F[Node][*it] : F[Node][*it])))
+                Use[*it] = true, Q.push(*it);
+}
+int main() {
+    cin >> N >> M;
+    for(int i = 1 ; i <= M ; ++ i) {
+        int x, y, z;
+        cin >> x >> y >> z;
+        G[x].push_back(y);
+        G[y].push_back(x);
+        C[x][y] = C[y][x] = z;
+        Vertex[i] = make_pair(x, y);
+    }
+    for( ; BFs() ;) {
+        int MinFlow = oo;
+        for(int i = 1 ; i < N ; ++ i)
+            if(F[i][N] < C[i][N]) {
+                int MinFlow = C[i][N] - F[i][N];
+                for(int j = i ; j != 1 ; j = Father[j])
+                    MinFlow = min(MinFlow, C[Father[j]][j] - F[Father[j]][j]);
+                for(int j = i ; j != 1 ; j = Father[j])
+                    F[Father[j]][j] += MinFlow,
+                    F[j][Father[j]] -= MinFlow;
+                F[i][N] += MinFlow;
+                F[N][i] -= MinFlow;
+            }
+    }
+    BFs(1, Source);
+    BFs(N, Sink);
+    #ifndef DEBUG
+    for(int i = 1 ; i <= N ; ++ i)
+        cout << Source[i] << " " << Sink[i] << "\n";
+    #endif
+    for(int i = 1 ; i <= M ; ++ i) {
+        int Node1 = Vertex[i].first, Node2 = Vertex[i].second;
+        if((Source[Node1] && Sink[Node2]) || (Sink[Node1] && Source[Node2]))
+            if(C[Node1][Node2] == F[Node1][Node2] || C[Node2][Node1] == F[Node2][Node1])
+                Critic.push(i);
+    }
+    for(cout << Critic.size() <<"\n" ; !Critic.empty() ; Critic.pop())
+        cout << Critic.front() << "\n";
+    cin.close();
+    cout.close();
+    return 0;
+}

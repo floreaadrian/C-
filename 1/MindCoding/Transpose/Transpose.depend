@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1488474322 source:d:\codes\mindcoding\transpose\main.cpp
+	<iostream>
+	<stdio.h>
+

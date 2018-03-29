@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1457359799 source:d:\codes\infoarena\dragoni\main.cpp
+	<fstream>
+	<queue>
+	<vector>
+	<string.h>
+	<bitset>
+

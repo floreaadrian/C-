@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1454426562 source:d:\codes\infoarena\cifra\main.cpp
+	<fstream>
+	<cstring>
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1475860616 source:d:\codes\codechef\chefkey\main.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+	<algorithm>
+	<string.h>
+	<math.h>
+

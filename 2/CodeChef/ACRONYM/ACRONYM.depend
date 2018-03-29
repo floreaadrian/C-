@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1456429083 source:d:\codes\codechef\acronym\main.cpp
+	<iostream>
+	<string.h>
+	<fstream>
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1474556941 source:d:\codes\hackerearth\implementation\main.cpp
+	<iostream>
+	<stdio.h>
+	<string>
+	<algorithm>
+	<string.h>
+

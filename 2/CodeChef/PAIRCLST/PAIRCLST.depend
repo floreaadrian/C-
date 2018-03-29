@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1459005163 source:d:\codes\codechef\pairclst\main.cpp
+	<iostream>
+	<queue>
+	<string.h>
+	<vector>
+

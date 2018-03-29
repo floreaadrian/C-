@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1478457693 source:d:\codes\codechef\chsqr\main.cpp
+	<stdio.h>
+	<algorithm>
+	<iostream>
+	<vector>
+	<string.h>
+

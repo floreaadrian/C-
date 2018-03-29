@@ -1,0 +1,1 @@
+Case 1: 16 nodes not reachable from node 2 with TTL = 35Case 2: 16 nodes not reachable from node 3 with TTL = 35Case 3: 14 nodes not reachable from node 1 with TTL = 1Case 4: 14 nodes not reachable from node 2 with TTL = 1Case 5: 14 nodes not reachable from node 2 with TTL = 3Case 6: 14 nodes not reachable from node 3 with TTL = 3

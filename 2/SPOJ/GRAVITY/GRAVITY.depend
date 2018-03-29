@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1457173630 source:d:\codes\spoj\gravity\main.cpp
+	<iostream>
+	<vector>
+	<math.h>
+	<queue>
+	<map>
+

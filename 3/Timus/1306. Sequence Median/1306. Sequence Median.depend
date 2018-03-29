@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1453834554 source:d:\codes\timus\1306. sequence median\main.cpp
+	<fstream>
+	<queue>
+

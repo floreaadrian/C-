@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1456505891 source:d:\codes\codechef\simplearraysum\main.cpp
+	<cmath>
+	<cstdio>
+	<vector>
+	<iostream>
+	<algorithm>
+

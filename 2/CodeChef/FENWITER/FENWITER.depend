@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1476382246 source:d:\codes\codechef\fenwiter\main.cpp
+	<iostream>
+	<stdio.h>
+	<math.h>
+	<string.h>
+	<string>
+

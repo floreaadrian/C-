@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1485687664 source:d:\codes\infoarena\ubuntzei\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<fstream>
+	<queue>
+	<string.h>
+

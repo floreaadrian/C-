@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1464420805 source:d:\codes\codechef\mmsum\main.cpp
+	<iostream>
+	<string.h>
+

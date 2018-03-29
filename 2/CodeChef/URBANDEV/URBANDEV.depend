@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1478375892 source:d:\codes\codechef\urbandev\main.cpp
+	<stdio.h>
+	<iostream>
+

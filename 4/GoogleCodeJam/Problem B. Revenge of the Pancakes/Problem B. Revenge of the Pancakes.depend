@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1460187317 source:d:\codes\googlecodejam\problem b. revenge of the pancakes\main.cpp
+	<fstream>
+	<string>
+

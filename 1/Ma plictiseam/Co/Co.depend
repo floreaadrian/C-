@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1462278264 source:d:\codes\jmk\co\main.cpp
+	<fstream>
+	<iostream>
+	<string.h>
+	<vector>
+

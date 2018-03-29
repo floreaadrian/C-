@@ -1,0 +1,86 @@
+#include <fstream>
+#include <vector>
+#include <bitset>
+#include <queue>
+#include <algorithm>
+#include <utility>
+#include <string.h>
+ 
+using namespace std;
+ 
+ifstream cin("cc.in");
+ofstream cout("cc.out");
+ 
+const int MAXN = 105<<1;
+const int oo = (1<<31)-1;
+ 
+typedef vector<int> Graph[MAXN];
+typedef vector<int> :: iterator It;
+ 
+Graph G;
+int N, So, Si, Qu[MAXN][MAXN], C[MAXN][MAXN];
+vector<int> D(MAXN, oo), Act(MAXN), Old(MAXN), Father(MAXN);
+priority_queue<pair<int, int> , vector<pair<int, int> > , greater<pair<int, int> > > Q;
+ 
+inline bool Dijkstra() {
+    fill(D.begin(), D.end() , oo);
+    Q.push(make_pair(0, So));
+    D[So] = 0;
+    Act[So] = 0;
+    for( ; !Q.empty() ; ) {
+        int act = Q.top().second;
+        int actv = Q.top().first;
+        Q.pop();
+        if(actv != D[act])  continue;
+        for(It it = G[act].begin(), fin = G[act].end() ; it != fin ; ++ it)
+            if(Qu[act][*it]) {
+                int actual = C[act][*it] + Old[act] - Old[*it];
+                if(D[*it] > D[act] + actual ) {
+                    Father[*it] = act;
+                    D[*it] = D[act] + actual;
+                    Act[*it] = Act[act] + C[act][*it];
+                    Q.push(make_pair(D[*it], *it));
+                }
+            }
+    }
+    Old = Act;
+    return D[Si] != oo;
+}
+ 
+int main() {
+    cin >> N;
+    So = 0;
+    Si = 2*N + 1;
+    for(int i = 1 ; i <= N ; ++ i)
+        for(int j = 1; j <= N ; ++ j) {
+            int x; cin >> x;   ///distanta de la i la j
+            G[i].push_back(N + j);
+            G[N + j].push_back(i);
+            Qu[i][N+j] = 1;
+            C[i][N+j] = x;
+            C[N+j][i] = -x;
+ 
+        }
+    for(int i = 1 ; i <= N ; ++i) {
+        Qu[So][i] = 1;
+        Qu[N+i][Si] = 1;
+        G[So].push_back(i);
+        G[i].push_back(So);
+        G[Si].push_back(N+i);
+        G[N+i].push_back(Si);
+    }
+    int MinimumDist = 0;
+    for( ; Dijkstra() ; ) {
+        int MinFlow = oo;
+        for(int i = Si ; i != So ; i = Father[i])
+            MinFlow = min(MinFlow, Qu[Father[i]][i]);
+        for(int i = Si ; i != So ; i = Father[i])
+            Qu[Father[i]][i] -= MinFlow,
+            Qu[i][Father[i]] += MinFlow;
+        MinimumDist += MinFlow * Act[Si];
+    }
+    cout << MinimumDist << "\n";
+    cin.close();
+    cout.close();
+    return 0;
+}

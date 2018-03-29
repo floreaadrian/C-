@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1466091848 source:d:\codes\codeeval\clean up the words\main.cpp
+	<fstream>
+	<iostream>
+	<string.h>
+

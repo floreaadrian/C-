@@ -8,6 +8,7 @@
 
 #include "Tutorial.h"
 #include <cstdlib>
+#include <iostream>
 #include <string.h>
 
 Tutorial::Tutorial()
@@ -28,6 +29,8 @@ bool operator==(const Tutorial &a, const Tutorial &b) {
     return true;
   return false;
 }
+
+void Tutorial::upLike() { this->likes++; }
 
 void Tutorial::play() {
   std::string link = "open -a Safari " + this->getSource();

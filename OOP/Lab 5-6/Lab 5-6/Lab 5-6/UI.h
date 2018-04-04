@@ -22,14 +22,14 @@ public:
 private:
   static void printMenu();
   static void printRepositoryMenu();
-  // static void printPlayListMenu();
+  static void printWatchListMenu();
 
   void addTutorialToRepo();
-  void deleteTutorialToRepo();
+  void deleteTutorial(int option);
   void updateTutorialToRepo();
-  void displayAllTutorialsRepo();
-  //    void addTutorialToPlaylist();
-  //    void addAllTutorialsByPresenterToPlaylist();
+  void displayAllTutorials(int option);
+  void addTutorialToWatchlist();
+  void addAllTutorialsByPresentersToWatchlist();
 };
 
 #endif /* UI_h */

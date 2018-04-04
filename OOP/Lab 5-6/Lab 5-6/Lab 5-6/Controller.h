@@ -10,17 +10,18 @@
 #define Controller_h
 
 #include "Repo.h"
+#include "Watchlist.h"
 
 class Controller {
 private:
   Repository repo;
-  // PlayList playList;
+  Watchlist watchList;
 
 public:
   Controller(const Repository &r) : repo{r} {}
 
   Repository getRepo() const { return repo; }
-  // PlayList getPlaylist() const { return playList; }
+  Watchlist getWatchlist() const { return watchList; }
 
   // Adds a Tutorial with the given data to the Tutorial repository.
   int addTutorialToRepository(const std::string &presenter,
@@ -35,6 +36,24 @@ public:
                                  const std::string &newTitle, double minutes,
                                  double seconds, int likes,
                                  const std::string &source);
+  int deleteTutorialWatchlistNameAndPresenterCtrl(const std::string &presenter,
+                                                  const std::string &title,
+                                                  bool like);
+  // Adds all the tutorialss from the repository, that have the given presenter,
+  // to the current playlist.
+  void addAllTutorialsByPresenterToWatchlist(const std::string &presenter);
+  int deleteTutorialWatchlist(const Tutorial &tutorial);
+  void playWatchlist();
+  void nextTutorialWatchlist();
+  void tests();
+  void testAddRepo();
+  void testDeleteRepo();
+  void testUpdateRepo();
+  void testDeleteSpecificWatchlis();
+  void testAddWatchlist();
+  void testDeleteWatchlist();
+  void testPlay();
+  void testNext();
 };
 
 #endif /* Controller_h */

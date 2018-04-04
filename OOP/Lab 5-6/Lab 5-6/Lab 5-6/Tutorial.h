@@ -50,6 +50,7 @@ public:
   int getLikes() const { return likes; }
   // Plays the current Tutorial: the page corresponding to the source link is
   // opened in a browser.
+  void upLike();
   friend bool operator==(const Tutorial &a, const Tutorial &b);
   void play();
 };

@@ -28,6 +28,16 @@ void UI::printRepositoryMenu() {
   cout << "\t 0 - Back.\n";
 }
 
+void UI::printWatchListMenu() {
+  cout << "Possible commands: \n";
+  cout << "\t 1 - See tutorials by presenter and play.\n";
+  cout << "\t 2 - Add the active tutorial to the watchlist.\n";
+  cout << "\t 3 - Next tutorial.\n";
+  cout << "\t 4 - Delete tutorial.\n";
+  cout << "\t 5 - See all the tutorials in the watchlist.\n";
+  cout << "\t 0 - Back.\n";
+}
+
 void UI::addTutorialToRepo() {
   cout << "Enter the presenter: ";
   std::string presenter;
@@ -55,14 +65,28 @@ void UI::addTutorialToRepo() {
     printf("Failed add!\n");
 }
 
-void UI::deleteTutorialToRepo() {
+void UI::deleteTutorial(int option) {
   cout << "Enter the presenter: ";
   std::string presenter;
   getline(cin, presenter);
   cout << "Enter the title: ";
   std::string title;
   getline(cin, title);
-  int res = this->ctrl.deleteTutorialToRepository(presenter, title);
+  int res = 0;
+  if (option == 1)
+    res = this->ctrl.deleteTutorialToRepository(presenter, title);
+  else {
+    cout << "If you liked the tutorial enter 1,otherwise enter 0: ";
+    int option;
+    cin >> option;
+    bool ok;
+    if (option == 0)
+      ok = false;
+    else
+      ok = true;
+    res = this->ctrl.deleteTutorialWatchlistNameAndPresenterCtrl(presenter,
+                                                                 title, ok);
+  }
   if (res == 1)
     printf("Succsesful delete!\n");
   else
@@ -102,8 +126,10 @@ void UI::updateTutorialToRepo() {
     printf("Failed update!\n");
 }
 
-void UI::displayAllTutorialsRepo() {
+void UI::displayAllTutorials(int option) {
   DynamicArray v = this->ctrl.getRepo().getTutorials();
+  if (option == 2)
+    v = this->ctrl.getWatchlist().getTutorials();
   Tutorial *Tutorials = v.getAllElems();
   if (Tutorials == NULL)
     return;
@@ -125,6 +151,14 @@ void UI::displayAllTutorialsRepo() {
   for (int j = 0; j < 30; j++)
     cout << "-";
   cout << "\n";
+}
+
+void UI::addAllTutorialsByPresentersToWatchlist() {
+  cout << "Enter the presenter: ";
+  std::string presenter;
+  getline(cin, presenter);
+  this->ctrl.addAllTutorialsByPresenterToWatchlist(presenter);
+  this->displayAllTutorials(2);
 }
 
 void UI::run() {
@@ -158,17 +192,61 @@ void UI::run() {
             this->addTutorialToRepo();
             break;
           case 2:
-            this->deleteTutorialToRepo();
+            this->deleteTutorial(1);
             break;
           case 3:
             this->updateTutorialToRepo();
             break;
           case 4:
-            this->displayAllTutorialsRepo();
+            this->displayAllTutorials(1);
           }
         }
       else
         cout << "Invalid password!";
+    } else if (command == 2) {
+      while (true) {
+        UI::printWatchListMenu();
+        int commandWatchlist{0};
+        cout << "Input the command: ";
+        cin >> commandWatchlist;
+        cin.ignore();
+        if (commandWatchlist == 0)
+          break;
+        switch (commandWatchlist) {
+        case 1:
+          // see by presenter and play
+          this->addAllTutorialsByPresentersToWatchlist();
+          this->ctrl.playWatchlist();
+          break;
+        case 2: {
+          // Add the active tutorial to the watchlist.\n";
+          this->ctrl.nextTutorialWatchlist();
+          Tutorial s = this->ctrl.getWatchlist().getCurrentTutorial();
+          cout << "Now playing: " << s.getPresenter() << " - " << s.getTitle()
+               << "\n";
+          break;
+        }
+        case 3: {
+          // cout << "\t 3 - Next tutorial.\n";
+          this->ctrl.deleteTutorialWatchlist(
+              this->ctrl.getWatchlist().getCurrentTutorial());
+          this->ctrl.playWatchlist();
+          Tutorial s = this->ctrl.getWatchlist().getCurrentTutorial();
+          cout << "Now playing: " << s.getPresenter() << " - " << s.getTitle()
+               << "\n";
+          break;
+        }
+        case 4: {
+          // Delete tutorial from watchlist
+          this->deleteTutorial(2);
+          break;
+        }
+        case 5: {
+          displayAllTutorials(2);
+          break;
+        }
+        }
+      }
     }
   }
 }

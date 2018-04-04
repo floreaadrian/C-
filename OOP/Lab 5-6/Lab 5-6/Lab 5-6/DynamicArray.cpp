@@ -39,12 +39,21 @@ DynamicArray &DynamicArray::operator=(const DynamicArray &v) {
   return *this;
 }
 
-DynamicArray &DynamicArray::operator-(
-                                      const TElement &e) {
+DynamicArray &DynamicArray::operator-(const TElement &e) {
   for (int i = 0; i < this->size; i++)
     if (this->elems[i] == e)
       deleteElement(i);
   return *this;
+}
+
+bool operator==(const DynamicArray &a, const DynamicArray &b) {
+  if (a.getSize() != b.getSize())
+    return false;
+  for (int i = 0; i < a.getSize(); i++)
+    if (a.elems[i] == b.elems[i])
+        continue;
+    else return false;
+  return true;
 }
 
 void DynamicArray::add(const TElement &e) {
@@ -75,5 +84,31 @@ void DynamicArray::resize(double factor) {
 }
 
 TElement *DynamicArray::getAllElems() const { return this->elems; }
+
+TElement DynamicArray::findByPresenterAndTitle(const std::string &presenter,
+                                               const std::string &title) {
+  if (this->size == 0)
+    return TElement{};
+  for (int i = 0; i < this->size; i++) {
+    TElement s = this->elems[i];
+    if (s.getPresenter() == presenter && s.getTitle() == title)
+      return s;
+  }
+
+  return TElement{};
+}
+
+int DynamicArray::findByPresenterAndTitlePos(const std::string &presenter,
+                                             const std::string &title) {
+  if (this->size == 0)
+    return -1;
+  for (int i = 0; i < this->size; i++) {
+    Tutorial s = this->elems[i];
+    if (s.getPresenter() == presenter && s.getTitle() == title)
+      return i;
+  }
+
+  return -1;
+}
 
 int DynamicArray::getSize() const { return this->size; }

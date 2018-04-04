@@ -30,11 +30,17 @@ public:
   // assignment operator for a DynamicArray
   DynamicArray &operator=(const DynamicArray &v);
   DynamicArray &operator-(const TElement &e);
+  friend bool operator==(const DynamicArray &a, const DynamicArray &b);
 
   // Adds an element to the current DynamicArray.
   void add(const TElement &e);
   void deleteElement(int pos);
   int getSize() const;
+  TElement findByPresenterAndTitle(const std::string &presenter,
+                                   const std::string &title);
+  int findByPresenterAndTitlePos(const std::string &presenter,
+                                 const std::string &title);
+
   TElement *getAllElems() const;
 
 private:

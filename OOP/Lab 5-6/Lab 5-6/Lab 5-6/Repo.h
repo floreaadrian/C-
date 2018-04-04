@@ -33,23 +33,12 @@ public:
   int deleteTutorial(const std::string &presenter, const std::string &title);
   int updateTutorial(const std::string &presenter, const std::string &title,
                      const Tutorial &s);
-
-  /*
-   Finds a Tutorial, by presenter and title.
-   Input: presenter, title - string
-   Output: the Tutorial that was found, or an "empty" Tutorial (all fields empty
-   and duration 0), if nothing was found.
-   */
-  Tutorial findByPresenterAndTitle(const std::string &presenter,
-                                   const std::string &title);
-  int findByPresenterAndTitlePos(const std::string &presenter,
-                                 const std::string &title);
-
+  void likeTutorial(const std::string &presenter, const std::string &title);
   DynamicArray getTutorials() const { return Tutorials; }
   void tests();
-    void addTest();
-    void deleteTest();
-    void updateTest();
-    void findTest();
+  void addTest();
+  void deleteTest();
+  void updateTest();
+  void likeTests();
 };
 #endif /* Repo_hpp */

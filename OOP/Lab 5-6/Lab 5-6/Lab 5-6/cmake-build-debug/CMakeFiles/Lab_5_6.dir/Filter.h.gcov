@@ -1,0 +1,70 @@
+        -:    0:Source:/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/./Filter.h
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1://
+        -:    2://  Filter.hpp
+        -:    3://  Lab 5-6
+        -:    4://
+        -:    5://  Created by Adrian-Paul Florea on 4/5/18.
+        -:    6://  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+        -:    7://
+        -:    8:#pragma once
+        -:    9:#include "Tutorial.h"
+        -:   10:#include <string>
+        -:   11:
+function _ZN10ComparatorI8TutorialEC2Ev called 0 returned 0% blocks executed 0%
+    #####:   12:template <typename T> class Comparator {
+    $$$$$:   12-block  0
+        -:   13:public:
+        -:   14:  virtual bool include(const T &a, const T &b) const = 0;
+function _ZN10ComparatorI8TutorialED1Ev called 0 returned 0% blocks executed 0%
+function _ZN10ComparatorI8TutorialED0Ev called 0 returned 0% blocks executed 0%
+function _ZN10ComparatorI8TutorialED2Ev called 0 returned 0% blocks executed 0%
+    #####:   15:  virtual ~Comparator(){};
+    $$$$$:   15-block  0
+    $$$$$:   15-block  1
+    $$$$$:   15-block  2
+    $$$$$:   15-block  3
+    $$$$$:   15-block  4
+        -:   16:};
+        -:   17:
+        -:   18:class FilterLessMinutes : public Comparator<Tutorial> {
+        -:   19:public:
+        -:   20:  bool include(const Tutorial &a, const Tutorial &b) const {
+        -:   21:    return a.getDuration().getMinutes() < b.getDuration().getMinutes();
+        -:   22:  }
+        -:   23:};
+        -:   24:class FilterMoreMinutes : public Comparator<Tutorial> {
+        -:   25:
+        -:   26:public:
+        -:   27:  bool include(const Tutorial &a, const Tutorial &b) const {
+        -:   28:    std::cout << a.getDuration().getMinutes() << " ";
+        -:   29:    return a.getDuration().getMinutes() >= b.getDuration().getMinutes();
+        -:   30:  }
+        -:   31:};
+        -:   32:
+function _ZN17FilterTitleBiggerC1Ev called 0 returned 0% blocks executed 0%
+function _ZN17FilterTitleBiggerD1Ev called 0 returned 0% blocks executed 0%
+function _ZN17FilterTitleBiggerC2Ev called 0 returned 0% blocks executed 0%
+function _ZN17FilterTitleBiggerD0Ev called 0 returned 0% blocks executed 0%
+function _ZN17FilterTitleBiggerD2Ev called 0 returned 0% blocks executed 0%
+    #####:   33:class FilterTitleBigger : public Comparator<Tutorial> {
+    $$$$$:   33-block  0
+    $$$$$:   33-block  1
+    $$$$$:   33-block  2
+    $$$$$:   33-block  3
+    $$$$$:   33-block  4
+        -:   34:public:
+function _ZNK17FilterTitleBigger7includeERK8TutorialS2_ called 0 returned 0% blocks executed 0%
+        -:   35:  bool include(const Tutorial &a, const Tutorial &b) const {
+    #####:   36:    return a.getTitle() > b.getTitle();
+    $$$$$:   36-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   36-block  1
+    $$$$$:   36-block  2
+    $$$$$:   36-block  3
+    #####:   37:  }
+        -:   38:};

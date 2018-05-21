@@ -14,8 +14,14 @@ using namespace std;
 void tests() {
   Repository repo{};
   repo.tests();
+  Watchlist watch{};
+  watch.tests();
   Controller ctrl{repo};
   ctrl.tests();
+  Tutorial tutorial{};
+  tutorial.tests();
+  DynamicArray<Tutorial> array{};
+  array.tests();
 }
 
 int main(int argc, const char *argv[]) {
@@ -55,7 +61,9 @@ int main(int argc, const char *argv[]) {
                "https://www.youtube.com/watch?v=ABRP_5RYhqU"};
   Tutorial s11{"a", "a", Duration{1, 1}, 0, "https://google.com"};
   Tutorial s12{"a", "b", Duration{1, 1}, 0, "https://facebook.com"};
-  Tutorial s13{"a", "c", Duration{1, 1}, 0, "https://apple.com"};
+  Tutorial s13{"a", "e", Duration{1, 1}, 0, "https://apple.com"};
+  Tutorial s14{"a", "c", Duration{23, 1}, 0, "https://apple.com"};
+  Tutorial s15{"a", "f", Duration{5, 1}, 0, "https://apple.com"};
   repo.addTutorial(s1);
   repo.addTutorial(s2);
   repo.addTutorial(s3);
@@ -69,6 +77,8 @@ int main(int argc, const char *argv[]) {
   repo.addTutorial(s11);
   repo.addTutorial(s12);
   repo.addTutorial(s13);
+  repo.addTutorial(s14);
+  repo.addTutorial(s15);
   Controller ctrl{repo};
   UI ui{ctrl};
   ui.run();

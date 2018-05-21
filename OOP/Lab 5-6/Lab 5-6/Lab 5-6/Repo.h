@@ -15,7 +15,7 @@
 
 class Repository {
 private:
-  DynamicArray Tutorials;
+  DynamicArray<Tutorial> Tutorials;
 
 public:
   /*
@@ -34,7 +34,7 @@ public:
   int updateTutorial(const std::string &presenter, const std::string &title,
                      const Tutorial &s);
   void likeTutorial(const std::string &presenter, const std::string &title);
-  DynamicArray getTutorials() const { return Tutorials; }
+  DynamicArray<Tutorial> getTutorials() const { return Tutorials; }
   void tests();
   void addTest();
   void deleteTest();

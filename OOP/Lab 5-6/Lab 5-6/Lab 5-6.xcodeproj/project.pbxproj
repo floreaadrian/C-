@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F11157720735AFA0093F8C2 /* Watchlist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F11157520735AF90093F8C2 /* Watchlist.cpp */; };
+		1F391E74207622F600804C16 /* Filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F391E72207622F600804C16 /* Filter.cpp */; };
 		1F73D4EF206794A8002DE399 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D4EE206794A8002DE399 /* main.cpp */; };
+		1F73D4FC20679541002DE399 /* Tutorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D4FB20679541002DE399 /* Tutorial.cpp */; };
+		1F73D5012067959B002DE399 /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D5002067959B002DE399 /* UI.cpp */; };
+		1F73D504206795D6002DE399 /* DynamicArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D502206795D6002DE399 /* DynamicArray.cpp */; };
+		1F73D507206795F0002DE399 /* Repo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D505206795F0002DE399 /* Repo.cpp */; };
+		1F73D50A2067962A002DE399 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D5082067962A002DE399 /* Controller.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +30,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F11157520735AF90093F8C2 /* Watchlist.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Watchlist.cpp; sourceTree = "<group>"; };
+		1F11157620735AF90093F8C2 /* Watchlist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Watchlist.h; sourceTree = "<group>"; };
+		1F391E72207622F600804C16 /* Filter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Filter.cpp; sourceTree = "<group>"; };
+		1F391E73207622F600804C16 /* Filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
 		1F73D4EB206794A8002DE399 /* Lab 5-6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Lab 5-6"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F73D4EE206794A8002DE399 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1F73D4FB20679541002DE399 /* Tutorial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tutorial.cpp; sourceTree = "<group>"; };
+		1F73D4FD20679552002DE399 /* Tutorial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
+		1F73D4FF2067958C002DE399 /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
+		1F73D5002067959B002DE399 /* UI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UI.cpp; sourceTree = "<group>"; };
+		1F73D502206795D6002DE399 /* DynamicArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DynamicArray.cpp; sourceTree = "<group>"; };
+		1F73D503206795D6002DE399 /* DynamicArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicArray.h; sourceTree = "<group>"; };
+		1F73D505206795F0002DE399 /* Repo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Repo.cpp; sourceTree = "<group>"; };
+		1F73D506206795F0002DE399 /* Repo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repo.h; sourceTree = "<group>"; };
+		1F73D5082067962A002DE399 /* Controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
+		1F73D5092067962A002DE399 /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,20 @@
 			isa = PBXGroup;
 			children = (
 				1F73D4EE206794A8002DE399 /* main.cpp */,
+				1F73D4FB20679541002DE399 /* Tutorial.cpp */,
+				1F73D4FD20679552002DE399 /* Tutorial.h */,
+				1F73D4FF2067958C002DE399 /* UI.h */,
+				1F73D5002067959B002DE399 /* UI.cpp */,
+				1F73D502206795D6002DE399 /* DynamicArray.cpp */,
+				1F73D503206795D6002DE399 /* DynamicArray.h */,
+				1F73D505206795F0002DE399 /* Repo.cpp */,
+				1F73D506206795F0002DE399 /* Repo.h */,
+				1F73D5082067962A002DE399 /* Controller.cpp */,
+				1F73D5092067962A002DE399 /* Controller.h */,
+				1F11157520735AF90093F8C2 /* Watchlist.cpp */,
+				1F11157620735AF90093F8C2 /* Watchlist.h */,
+				1F391E72207622F600804C16 /* Filter.cpp */,
+				1F391E73207622F600804C16 /* Filter.h */,
 			);
 			path = "Lab 5-6";
 			sourceTree = "<group>";
@@ -88,7 +123,7 @@
 		1F73D4E3206794A8002DE399 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Adrian-Paul Florea";
 				TargetAttributes = {
 					1F73D4EA206794A8002DE399 = {
@@ -120,6 +155,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F73D4EF206794A8002DE399 /* main.cpp in Sources */,
+				1F391E74207622F600804C16 /* Filter.cpp in Sources */,
+				1F11157720735AFA0093F8C2 /* Watchlist.cpp in Sources */,
+				1F73D50A2067962A002DE399 /* Controller.cpp in Sources */,
+				1F73D504206795D6002DE399 /* DynamicArray.cpp in Sources */,
+				1F73D5012067959B002DE399 /* UI.cpp in Sources */,
+				1F73D4FC20679541002DE399 /* Tutorial.cpp in Sources */,
+				1F73D507206795F0002DE399 /* Repo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +182,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -147,6 +190,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -195,6 +239,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -202,6 +247,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

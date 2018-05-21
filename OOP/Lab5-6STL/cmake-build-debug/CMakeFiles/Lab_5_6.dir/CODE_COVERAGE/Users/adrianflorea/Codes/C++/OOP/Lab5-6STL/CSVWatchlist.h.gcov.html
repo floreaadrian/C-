@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - hi.info - /Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/CSVWatchlist.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../index.html">top level</a> - <a href="index.html">Users/adrianflorea/Codes/C++/OOP/Lab5-6STL</a> - CSVWatchlist.h<span style="font-size: 80%;"> (source / <a href="CSVWatchlist.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">hi.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-05-01 13:42:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntryLo">40.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : //</a>
+<span class="lineNum">       2 </span>            : //  CSVWatchlist.h
+<span class="lineNum">       3 </span>            : //  Lab5-6STL
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : //  Created by Adrian-Paul Florea on 4/23/18.
+<span class="lineNum">       6 </span>            : //  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+<span class="lineNum">       7 </span>            : //
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #pragma once
+<span class="lineNum">      10 </span>            : #include &quot;FileWatchlist.h&quot;
+<a name="11"><span class="lineNum">      11 </span>            : #include &lt;string&gt;</a>
+<span class="lineNum">      12 </span>            : 
+<span class="lineNum">      13 </span><span class="lineNoCov">          0 : class CSVWatchlist: public FileWatchlist</span>
+<a name="14"><span class="lineNum">      14 </span>            : {</a>
+<span class="lineNum">      15 </span>            : public:
+<span class="lineNum">      16 </span><span class="lineCov">         18 :     CSVWatchlist(const std::string&amp; filename) : FileWatchlist{ filename } {readFromFile();}</span>
+<span class="lineNum">      17 </span>            :     
+<span class="lineNum">      18 </span>            :     /*
+<span class="lineNum">      19 </span>            :      Read the playlist to file.
+<span class="lineNum">      20 </span>            :      Throws: FileException - if it cannot read.
+<span class="lineNum">      21 </span>            :      */
+<span class="lineNum">      22 </span>            :     void readFromFile() override;
+<span class="lineNum">      23 </span>            : 
+<span class="lineNum">      24 </span>            :     /*
+<span class="lineNum">      25 </span>            :      Writes the playlist to file.
+<span class="lineNum">      26 </span>            :      Throws: FileException - if it cannot write.
+<span class="lineNum">      27 </span>            :      */
+<span class="lineNum">      28 </span>            :     void writeToFile() override;
+<span class="lineNum">      29 </span>            :     
+<span class="lineNum">      30 </span>            :     /*
+<span class="lineNum">      31 </span>            :      Displays the playlist using Microsof Excel.
+<span class="lineNum">      32 </span>            :      */
+<span class="lineNum">      33 </span>            :     void displayWatchlist() const override;
+<span class="lineNum">      34 </span>            : };
+<span class="lineNum">      35 </span>            : 
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

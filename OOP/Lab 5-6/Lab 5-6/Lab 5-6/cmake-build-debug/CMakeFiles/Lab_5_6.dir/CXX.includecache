@@ -1,0 +1,94 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Controller.cpp
+Controller.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Controller.h
+Filter.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Filter.h
+assert.h
+-
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Controller.h
+Repo.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Repo.h
+Watchlist.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Watchlist.h
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/DynamicArray.cpp
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/DynamicArray.h
+Filter.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Filter.h
+Tutorial.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Tutorial.h
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Filter.cpp
+Filter.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Filter.h
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Filter.h
+Tutorial.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Tutorial.h
+string
+-
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Repo.cpp
+Repo.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Repo.h
+assert.h
+-
+string
+-
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Repo.h
+DynamicArray.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/DynamicArray.h
+Tutorial.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Tutorial.h
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Tutorial.cpp
+Tutorial.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Tutorial.h
+cstdlib
+-
+iostream
+-
+string.h
+-
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Tutorial.h
+iostream
+-
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/UI.cpp
+UI.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/UI.h
+string
+-
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/UI.h
+Controller.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Controller.h
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Watchlist.cpp
+Filter.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Filter.h
+Watchlist.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Watchlist.h
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Watchlist.h
+DynamicArray.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/DynamicArray.h
+
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/main.cpp
+Tutorial.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/Tutorial.h
+UI.h
+/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/UI.h
+

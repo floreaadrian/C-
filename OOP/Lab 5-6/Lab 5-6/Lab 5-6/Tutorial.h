@@ -53,6 +53,14 @@ public:
   void upLike();
   friend bool operator==(const Tutorial &a, const Tutorial &b);
   void play();
+  void tests();
+  void titleTest();
+  void presenterTest();
+  void durationTest();
+  void sourceTest();
+  void likeTest();
+  void upLikeTest();
+  void equalTest();
 };
 
 #endif /* Tutorial_h */

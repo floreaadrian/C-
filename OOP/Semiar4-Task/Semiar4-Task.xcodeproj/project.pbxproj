@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F8777A7208DC6F700A489EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777A6208DC6F700A489EF /* main.cpp */; };
+		1F8777AF208DC71000A489EF /* UI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777AD208DC71000A489EF /* UI.cpp */; };
+		1F8777B2208DC73C00A489EF /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777B0208DC73C00A489EF /* Controller.cpp */; };
+		1F8777B5208DC78E00A489EF /* PlayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777B3208DC78E00A489EF /* PlayList.cpp */; };
+		1F8777B8208DC7B800A489EF /* Repository.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777B6208DC7B800A489EF /* Repository.cpp */; };
+		1F8777BB208DC7E100A489EF /* RepositoryExceptions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777B9208DC7E100A489EF /* RepositoryExceptions.cpp */; };
+		1F8777BE208DC80300A489EF /* Song.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777BC208DC80300A489EF /* Song.cpp */; };
+		1F8777C1208DC82400A489EF /* SongValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777BF208DC82400A489EF /* SongValidator.cpp */; };
+		1F8777C4208DC84D00A489EF /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777C2208DC84D00A489EF /* Utils.cpp */; };
+		1F8777C7208DC8A400A489EF /* FilePlaylist.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777C5208DC8A400A489EF /* FilePlaylist.cpp */; };
+		1F8777CA208DCB3B00A489EF /* CSVPlayList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8777C8208DCB3B00A489EF /* CSVPlayList.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F8777A1208DC6F700A489EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1F8777A3208DC6F700A489EF /* Semiar4-Task */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Semiar4-Task"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8777A6208DC6F700A489EF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1F8777AD208DC71000A489EF /* UI.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UI.cpp; sourceTree = "<group>"; };
+		1F8777AE208DC71000A489EF /* UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UI.h; sourceTree = "<group>"; };
+		1F8777B0208DC73C00A489EF /* Controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
+		1F8777B1208DC73C00A489EF /* Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		1F8777B3208DC78E00A489EF /* PlayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayList.cpp; sourceTree = "<group>"; };
+		1F8777B4208DC78E00A489EF /* PlayList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayList.h; sourceTree = "<group>"; };
+		1F8777B6208DC7B800A489EF /* Repository.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Repository.cpp; sourceTree = "<group>"; };
+		1F8777B7208DC7B800A489EF /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		1F8777B9208DC7E100A489EF /* RepositoryExceptions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RepositoryExceptions.cpp; sourceTree = "<group>"; };
+		1F8777BA208DC7E100A489EF /* RepositoryExceptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepositoryExceptions.h; sourceTree = "<group>"; };
+		1F8777BC208DC80300A489EF /* Song.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Song.cpp; sourceTree = "<group>"; };
+		1F8777BD208DC80300A489EF /* Song.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		1F8777BF208DC82400A489EF /* SongValidator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SongValidator.cpp; sourceTree = "<group>"; };
+		1F8777C0208DC82400A489EF /* SongValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongValidator.h; sourceTree = "<group>"; };
+		1F8777C2208DC84D00A489EF /* Utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
+		1F8777C3208DC84D00A489EF /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		1F8777C5208DC8A400A489EF /* FilePlaylist.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FilePlaylist.cpp; sourceTree = "<group>"; };
+		1F8777C6208DC8A400A489EF /* FilePlaylist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilePlaylist.h; sourceTree = "<group>"; };
+		1F8777C8208DCB3B00A489EF /* CSVPlayList.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CSVPlayList.cpp; sourceTree = "<group>"; };
+		1F8777C9208DCB3B00A489EF /* CSVPlayList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVPlayList.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F8777A0208DC6F700A489EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F87779A208DC6F700A489EF = {
+			isa = PBXGroup;
+			children = (
+				1F8777A5208DC6F700A489EF /* Semiar4-Task */,
+				1F8777A4208DC6F700A489EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F8777A4208DC6F700A489EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F8777A3208DC6F700A489EF /* Semiar4-Task */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F8777A5208DC6F700A489EF /* Semiar4-Task */ = {
+			isa = PBXGroup;
+			children = (
+				1F8777A6208DC6F700A489EF /* main.cpp */,
+				1F8777AD208DC71000A489EF /* UI.cpp */,
+				1F8777AE208DC71000A489EF /* UI.h */,
+				1F8777B0208DC73C00A489EF /* Controller.cpp */,
+				1F8777B1208DC73C00A489EF /* Controller.h */,
+				1F8777B3208DC78E00A489EF /* PlayList.cpp */,
+				1F8777B4208DC78E00A489EF /* PlayList.h */,
+				1F8777B6208DC7B800A489EF /* Repository.cpp */,
+				1F8777B7208DC7B800A489EF /* Repository.h */,
+				1F8777B9208DC7E100A489EF /* RepositoryExceptions.cpp */,
+				1F8777BA208DC7E100A489EF /* RepositoryExceptions.h */,
+				1F8777BC208DC80300A489EF /* Song.cpp */,
+				1F8777BD208DC80300A489EF /* Song.h */,
+				1F8777BF208DC82400A489EF /* SongValidator.cpp */,
+				1F8777C0208DC82400A489EF /* SongValidator.h */,
+				1F8777C2208DC84D00A489EF /* Utils.cpp */,
+				1F8777C3208DC84D00A489EF /* Utils.h */,
+				1F8777C5208DC8A400A489EF /* FilePlaylist.cpp */,
+				1F8777C6208DC8A400A489EF /* FilePlaylist.h */,
+				1F8777C8208DCB3B00A489EF /* CSVPlayList.cpp */,
+				1F8777C9208DCB3B00A489EF /* CSVPlayList.h */,
+			);
+			path = "Semiar4-Task";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F8777A2208DC6F700A489EF /* Semiar4-Task */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8777AA208DC6F700A489EF /* Build configuration list for PBXNativeTarget "Semiar4-Task" */;
+			buildPhases = (
+				1F87779F208DC6F700A489EF /* Sources */,
+				1F8777A0208DC6F700A489EF /* Frameworks */,
+				1F8777A1208DC6F700A489EF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Semiar4-Task";
+			productName = "Semiar4-Task";
+			productReference = 1F8777A3208DC6F700A489EF /* Semiar4-Task */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F87779B208DC6F700A489EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Adrian-Paul Florea";
+				TargetAttributes = {
+					1F8777A2208DC6F700A489EF = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 1F87779E208DC6F700A489EF /* Build configuration list for PBXProject "Semiar4-Task" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F87779A208DC6F700A489EF;
+			productRefGroup = 1F8777A4208DC6F700A489EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F8777A2208DC6F700A489EF /* Semiar4-Task */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F87779F208DC6F700A489EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8777BE208DC80300A489EF /* Song.cpp in Sources */,
+				1F8777B8208DC7B800A489EF /* Repository.cpp in Sources */,
+				1F8777BB208DC7E100A489EF /* RepositoryExceptions.cpp in Sources */,
+				1F8777A7208DC6F700A489EF /* main.cpp in Sources */,
+				1F8777C4208DC84D00A489EF /* Utils.cpp in Sources */,
+				1F8777C7208DC8A400A489EF /* FilePlaylist.cpp in Sources */,
+				1F8777B2208DC73C00A489EF /* Controller.cpp in Sources */,
+				1F8777AF208DC71000A489EF /* UI.cpp in Sources */,
+				1F8777CA208DCB3B00A489EF /* CSVPlayList.cpp in Sources */,
+				1F8777B5208DC78E00A489EF /* PlayList.cpp in Sources */,
+				1F8777C1208DC82400A489EF /* SongValidator.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1F8777A8208DC6F700A489EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1F8777A9208DC6F700A489EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1F8777AB208DC6F700A489EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46K333G6VT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1F8777AC208DC6F700A489EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 46K333G6VT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F87779E208DC6F700A489EF /* Build configuration list for PBXProject "Semiar4-Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8777A8208DC6F700A489EF /* Debug */,
+				1F8777A9208DC6F700A489EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F8777AA208DC6F700A489EF /* Build configuration list for PBXNativeTarget "Semiar4-Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8777AB208DC6F700A489EF /* Debug */,
+				1F8777AC208DC6F700A489EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F87779B208DC6F700A489EF /* Project object */;
+}

@@ -7,7 +7,6 @@
 //
 
 #include "UI.h"
-#include "sha256.h"
 #include <string>
 
 using namespace std;
@@ -35,6 +34,7 @@ void UI::printWatchListMenu() {
   cout << "\t 3 - Next tutorial.\n";
   cout << "\t 4 - Delete tutorial.\n";
   cout << "\t 5 - See all the tutorials in the watchlist.\n";
+  cout << "\t 6 - Sort.\n";
   cout << "\t 0 - Back.\n";
 }
 
@@ -127,7 +127,7 @@ void UI::updateTutorialToRepo() {
 }
 
 void UI::displayAllTutorials(int option) {
-  DynamicArray v = this->ctrl.getRepo().getTutorials();
+  DynamicArray<Tutorial> v = this->ctrl.getRepo().getTutorials();
   if (option == 2)
     v = this->ctrl.getWatchlist().getTutorials();
   Tutorial *Tutorials = v.getAllElems();
@@ -157,7 +157,10 @@ void UI::addAllTutorialsByPresentersToWatchlist() {
   cout << "Enter the presenter: ";
   std::string presenter;
   getline(cin, presenter);
-  this->ctrl.addAllTutorialsByPresenterToWatchlist(presenter);
+  if (presenter == "")
+    this->ctrl.addAllTutorialsToWatchlist();
+  else
+    this->ctrl.addAllTutorialsByPresenterToWatchlist(presenter);
   this->displayAllTutorials(2);
 }
 
@@ -176,9 +179,7 @@ void UI::run() {
       string pass;
       cout << "Input the password: ";
       cin >> pass;
-      pass = sha256(pass);
-      if (pass ==
-          "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8")
+      if (pass == "password")
         while (true) {
           UI::printRepositoryMenu();
           int commandRepo{0};
@@ -243,6 +244,24 @@ void UI::run() {
         }
         case 5: {
           displayAllTutorials(2);
+          break;
+        }
+        case 6: {
+          DynamicArray<Tutorial> sorted = this->ctrl.Sort();
+
+          for (int i = 0; i < sorted.getSize(); i++) {
+            Tutorial s = sorted[i];
+            Duration d = s.getDuration();
+            for (int j = 0; j < 30; j++)
+              cout << "-";
+            cout << "\n";
+            cout << s.getPresenter() << " - " << s.getTitle() << " \n"
+                 << d.getMinutes() << ":" << d.getSeconds()
+                 << "\nLikes: " << s.getLikes() << '\n';
+          }
+          for (int j = 0; j < 30; j++)
+            cout << "-";
+          cout << "\n";
           break;
         }
         }

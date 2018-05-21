@@ -1,0 +1,805 @@
+        -:    0:Source:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string_view
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1:// -*- C++ -*-
+        -:    2://===------------------------ string_view ---------------------------------===//
+        -:    3://
+        -:    4://                     The LLVM Compiler Infrastructure
+        -:    5://
+        -:    6:// This file is distributed under the University of Illinois Open Source
+        -:    7:// License. See LICENSE.TXT for details.
+        -:    8://
+        -:    9://===----------------------------------------------------------------------===//
+        -:   10:
+        -:   11:#ifndef _LIBCPP_STRING_VIEW
+        -:   12:#define _LIBCPP_STRING_VIEW
+        -:   13:
+        -:   14:/*
+        -:   15:string_view synopsis
+        -:   16:
+        -:   17:namespace std {
+        -:   18:
+        -:   19:    // 7.2, Class template basic_string_view
+        -:   20:    template<class charT, class traits = char_traits<charT>>
+        -:   21:        class basic_string_view;
+        -:   22:
+        -:   23:    // 7.9, basic_string_view non-member comparison functions
+        -:   24:    template<class charT, class traits>
+        -:   25:    constexpr bool operator==(basic_string_view<charT, traits> x,
+        -:   26:                              basic_string_view<charT, traits> y) noexcept;
+        -:   27:    template<class charT, class traits>
+        -:   28:    constexpr bool operator!=(basic_string_view<charT, traits> x,
+        -:   29:                              basic_string_view<charT, traits> y) noexcept;
+        -:   30:    template<class charT, class traits>
+        -:   31:    constexpr bool operator< (basic_string_view<charT, traits> x,
+        -:   32:                                 basic_string_view<charT, traits> y) noexcept;
+        -:   33:    template<class charT, class traits>
+        -:   34:    constexpr bool operator> (basic_string_view<charT, traits> x,
+        -:   35:                              basic_string_view<charT, traits> y) noexcept;
+        -:   36:    template<class charT, class traits>
+        -:   37:    constexpr bool operator<=(basic_string_view<charT, traits> x,
+        -:   38:                                 basic_string_view<charT, traits> y) noexcept;
+        -:   39:    template<class charT, class traits>
+        -:   40:    constexpr bool operator>=(basic_string_view<charT, traits> x,
+        -:   41:                              basic_string_view<charT, traits> y) noexcept;
+        -:   42:    // see below, sufficient additional overloads of comparison functions
+        -:   43:
+        -:   44:    // 7.10, Inserters and extractors
+        -:   45:    template<class charT, class traits>
+        -:   46:      basic_ostream<charT, traits>&
+        -:   47:        operator<<(basic_ostream<charT, traits>& os,
+        -:   48:                   basic_string_view<charT, traits> str);
+        -:   49:
+        -:   50:    // basic_string_view typedef names
+        -:   51:    typedef basic_string_view<char> string_view;
+        -:   52:    typedef basic_string_view<char16_t> u16string_view;
+        -:   53:    typedef basic_string_view<char32_t> u32string_view;
+        -:   54:    typedef basic_string_view<wchar_t> wstring_view;
+        -:   55:
+        -:   56:    template<class charT, class traits = char_traits<charT>>
+        -:   57:    class basic_string_view {
+        -:   58:      public:
+        -:   59:      // types
+        -:   60:      typedef traits traits_type;
+        -:   61:      typedef charT value_type;
+        -:   62:      typedef charT* pointer;
+        -:   63:      typedef const charT* const_pointer;
+        -:   64:      typedef charT& reference;
+        -:   65:      typedef const charT& const_reference;
+        -:   66:      typedef implementation-defined const_iterator;
+        -:   67:      typedef const_iterator iterator;
+        -:   68:      typedef reverse_iterator<const_iterator> const_reverse_iterator;
+        -:   69:      typedef const_reverse_iterator reverse_iterator;
+        -:   70:      typedef size_t size_type;
+        -:   71:      typedef ptrdiff_t difference_type;
+        -:   72:      static constexpr size_type npos = size_type(-1);
+        -:   73:
+        -:   74:      // 7.3, basic_string_view constructors and assignment operators
+        -:   75:      constexpr basic_string_view() noexcept;
+        -:   76:      constexpr basic_string_view(const basic_string_view&) noexcept = default;
+        -:   77:      basic_string_view& operator=(const basic_string_view&) noexcept = default;
+        -:   78:      template<class Allocator>
+        -:   79:      constexpr basic_string_view(const charT* str);
+        -:   80:      constexpr basic_string_view(const charT* str, size_type len);
+        -:   81:
+        -:   82:      // 7.4, basic_string_view iterator support
+        -:   83:      constexpr const_iterator begin() const noexcept;
+        -:   84:      constexpr const_iterator end() const noexcept;
+        -:   85:      constexpr const_iterator cbegin() const noexcept;
+        -:   86:      constexpr const_iterator cend() const noexcept;
+        -:   87:      const_reverse_iterator rbegin() const noexcept;
+        -:   88:      const_reverse_iterator rend() const noexcept;
+        -:   89:      const_reverse_iterator crbegin() const noexcept;
+        -:   90:      const_reverse_iterator crend() const noexcept;
+        -:   91:
+        -:   92:      // 7.5, basic_string_view capacity
+        -:   93:      constexpr size_type size() const noexcept;
+        -:   94:      constexpr size_type length() const noexcept;
+        -:   95:      constexpr size_type max_size() const noexcept;
+        -:   96:      constexpr bool empty() const noexcept;
+        -:   97:
+        -:   98:      // 7.6, basic_string_view element access
+        -:   99:      constexpr const_reference operator[](size_type pos) const;
+        -:  100:      constexpr const_reference at(size_type pos) const;
+        -:  101:      constexpr const_reference front() const;
+        -:  102:      constexpr const_reference back() const;
+        -:  103:      constexpr const_pointer data() const noexcept;
+        -:  104:
+        -:  105:      // 7.7, basic_string_view modifiers
+        -:  106:      constexpr void remove_prefix(size_type n);
+        -:  107:      constexpr void remove_suffix(size_type n);
+        -:  108:      constexpr void swap(basic_string_view& s) noexcept;
+        -:  109:
+        -:  110:      size_type copy(charT* s, size_type n, size_type pos = 0) const;
+        -:  111:
+        -:  112:      constexpr basic_string_view substr(size_type pos = 0, size_type n = npos) const;
+        -:  113:      constexpr int compare(basic_string_view s) const noexcept;
+        -:  114:      constexpr int compare(size_type pos1, size_type n1, basic_string_view s) const;
+        -:  115:      constexpr int compare(size_type pos1, size_type n1,
+        -:  116:                            basic_string_view s, size_type pos2, size_type n2) const;
+        -:  117:      constexpr int compare(const charT* s) const;
+        -:  118:      constexpr int compare(size_type pos1, size_type n1, const charT* s) const;
+        -:  119:      constexpr int compare(size_type pos1, size_type n1,
+        -:  120:                            const charT* s, size_type n2) const;
+        -:  121:      constexpr size_type find(basic_string_view s, size_type pos = 0) const noexcept;
+        -:  122:      constexpr size_type find(charT c, size_type pos = 0) const noexcept;
+        -:  123:      constexpr size_type find(const charT* s, size_type pos, size_type n) const;
+        -:  124:      constexpr size_type find(const charT* s, size_type pos = 0) const;
+        -:  125:      constexpr size_type rfind(basic_string_view s, size_type pos = npos) const noexcept;
+        -:  126:      constexpr size_type rfind(charT c, size_type pos = npos) const noexcept;
+        -:  127:      constexpr size_type rfind(const charT* s, size_type pos, size_type n) const;
+        -:  128:      constexpr size_type rfind(const charT* s, size_type pos = npos) const;
+        -:  129:      constexpr size_type find_first_of(basic_string_view s, size_type pos = 0) const noexcept;
+        -:  130:      constexpr size_type find_first_of(charT c, size_type pos = 0) const noexcept;
+        -:  131:      constexpr size_type find_first_of(const charT* s, size_type pos, size_type n) const;
+        -:  132:      constexpr size_type find_first_of(const charT* s, size_type pos = 0) const;
+        -:  133:      constexpr size_type find_last_of(basic_string_view s, size_type pos = npos) const noexcept;
+        -:  134:      constexpr size_type find_last_of(charT c, size_type pos = npos) const noexcept;
+        -:  135:      constexpr size_type find_last_of(const charT* s, size_type pos, size_type n) const;
+        -:  136:      constexpr size_type find_last_of(const charT* s, size_type pos = npos) const;
+        -:  137:      constexpr size_type find_first_not_of(basic_string_view s, size_type pos = 0) const noexcept;
+        -:  138:      constexpr size_type find_first_not_of(charT c, size_type pos = 0) const noexcept;
+        -:  139:      constexpr size_type find_first_not_of(const charT* s, size_type pos, size_type n) const;
+        -:  140:      constexpr size_type find_first_not_of(const charT* s, size_type pos = 0) const;
+        -:  141:      constexpr size_type find_last_not_of(basic_string_view s, size_type pos = npos) const noexcept;
+        -:  142:      constexpr size_type find_last_not_of(charT c, size_type pos = npos) const noexcept;
+        -:  143:      constexpr size_type find_last_not_of(const charT* s, size_type pos, size_type n) const;
+        -:  144:      constexpr size_type find_last_not_of(const charT* s, size_type pos = npos) const;
+        -:  145:
+        -:  146:     private:
+        -:  147:      const_pointer data_;  // exposition only
+        -:  148:      size_type     size_;  // exposition only
+        -:  149:    };
+        -:  150:
+        -:  151:  // 7.11, Hash support
+        -:  152:  template <class T> struct hash;
+        -:  153:  template <> struct hash<string_view>;
+        -:  154:  template <> struct hash<u16string_view>;
+        -:  155:  template <> struct hash<u32string_view>;
+        -:  156:  template <> struct hash<wstring_view>;
+        -:  157:
+        -:  158:  constexpr basic_string<char>     operator "" s( const char *str,     size_t len ); // C++17
+        -:  159:  constexpr basic_string<wchar_t>  operator "" s( const wchar_t *str,  size_t len ); // C++17
+        -:  160:  constexpr basic_string<char16_t> operator "" s( const char16_t *str, size_t len ); // C++17
+        -:  161:  constexpr basic_string<char32_t> operator "" s( const char32_t *str, size_t len ); // C++17
+        -:  162:
+        -:  163:}  // namespace std
+        -:  164:
+        -:  165:
+        -:  166:*/
+        -:  167:
+        -:  168:#include <__config>
+        -:  169:#include <__string>
+        -:  170:#include <algorithm>
+        -:  171:#include <iterator>
+        -:  172:#include <limits>
+        -:  173:#include <stdexcept>
+        -:  174:#include <__debug>
+        -:  175:
+        -:  176:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:  177:#pragma GCC system_header
+        -:  178:#endif
+        -:  179:
+        -:  180:_LIBCPP_PUSH_MACROS
+        -:  181:#include <__undef_macros>
+        -:  182:
+        -:  183:
+        -:  184:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:  185:
+        -:  186:template<class _CharT, class _Traits = char_traits<_CharT> >
+        -:  187:class _LIBCPP_TEMPLATE_VIS basic_string_view {
+        -:  188:public:
+        -:  189:	// types
+        -:  190:	typedef _Traits                                    traits_type;
+        -:  191:	typedef _CharT                                     value_type;
+        -:  192:	typedef const _CharT*                              pointer;
+        -:  193:	typedef const _CharT*                              const_pointer;
+        -:  194:	typedef const _CharT&                              reference;
+        -:  195:	typedef const _CharT&                              const_reference;
+        -:  196:	typedef const_pointer                              const_iterator; // See [string.view.iterators]
+        -:  197:	typedef const_iterator                             iterator;
+        -:  198:	typedef _VSTD::reverse_iterator<const_iterator>    const_reverse_iterator;
+        -:  199:	typedef const_reverse_iterator                     reverse_iterator;
+        -:  200:	typedef size_t                                     size_type;
+        -:  201:	typedef ptrdiff_t                                  difference_type;
+        -:  202:	static _LIBCPP_CONSTEXPR const size_type npos = -1; // size_type(-1);
+        -:  203:
+        -:  204:    static_assert(is_pod<value_type>::value, "Character type of basic_string_view must be a POD");
+        -:  205:    static_assert((is_same<_CharT, typename traits_type::char_type>::value),
+        -:  206:                  "traits_type::char_type must be the same type as CharT");
+        -:  207:
+        -:  208:	// [string.view.cons], construct/copy
+        -:  209:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  210:	basic_string_view() _NOEXCEPT : __data (nullptr), __size(0) {}
+        -:  211:
+        -:  212:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  213:	basic_string_view(const basic_string_view&) _NOEXCEPT = default;
+        -:  214:
+        -:  215:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  216:	basic_string_view& operator=(const basic_string_view&) _NOEXCEPT = default;
+        -:  217:
+        -:  218:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC1EPKcm called 0 returned 0% blocks executed 0%
+function _ZNSt3__117basic_string_viewIcNS_11char_traitsIcEEEC2EPKcm called 0 returned 0% blocks executed 0%
+        -:  219:	basic_string_view(const _CharT* __s, size_type __len)
+    #####:  220:		: __data(__s), __size(__len)
+    #####:  221:	{
+        -:  222:// #if _LIBCPP_STD_VER > 11
+        -:  223://         _LIBCPP_ASSERT(__len == 0 || __s != nullptr, "string_view::string_view(_CharT *, size_t): received nullptr");
+        -:  224:// #endif
+    #####:  225:	}
+    $$$$$:  225-block  0
+    $$$$$:  225-block  1
+        -:  226:
+        -:  227:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  228:	basic_string_view(const _CharT* __s)
+        -:  229:		: __data(__s), __size(_Traits::length(__s)) {}
+        -:  230:
+        -:  231:	// [string.view.iterators], iterators
+        -:  232:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  233:	const_iterator begin()  const _NOEXCEPT { return cbegin(); }
+        -:  234:
+        -:  235:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  236:	const_iterator end()    const _NOEXCEPT { return cend(); }
+        -:  237:
+        -:  238:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  239:	const_iterator cbegin() const _NOEXCEPT { return __data; }
+        -:  240:
+        -:  241:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  242:	const_iterator cend()   const _NOEXCEPT { return __data + __size; }
+        -:  243:
+        -:  244:	_LIBCPP_CONSTEXPR_AFTER_CXX14 _LIBCPP_INLINE_VISIBILITY
+        -:  245:	const_reverse_iterator rbegin()   const _NOEXCEPT { return const_reverse_iterator(cend()); }
+        -:  246:
+        -:  247:	_LIBCPP_CONSTEXPR_AFTER_CXX14 _LIBCPP_INLINE_VISIBILITY
+        -:  248:	const_reverse_iterator rend()     const _NOEXCEPT { return const_reverse_iterator(cbegin()); }
+        -:  249:
+        -:  250:	_LIBCPP_CONSTEXPR_AFTER_CXX14 _LIBCPP_INLINE_VISIBILITY
+        -:  251:	const_reverse_iterator crbegin()  const _NOEXCEPT { return const_reverse_iterator(cend()); }
+        -:  252:
+        -:  253:	_LIBCPP_CONSTEXPR_AFTER_CXX14 _LIBCPP_INLINE_VISIBILITY
+        -:  254:	const_reverse_iterator crend()    const _NOEXCEPT { return const_reverse_iterator(cbegin()); }
+        -:  255:
+        -:  256:	// [string.view.capacity], capacity
+        -:  257:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4sizeEv called 0 returned 0% blocks executed 0%
+    #####:  258:	size_type size()     const _NOEXCEPT { return __size; }
+    $$$$$:  258-block  0
+        -:  259:
+        -:  260:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  261:	size_type length()   const _NOEXCEPT { return __size; }
+        -:  262:
+        -:  263:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  264:	size_type max_size() const _NOEXCEPT { return numeric_limits<size_type>::max(); }
+        -:  265:
+        -:  266:	_LIBCPP_CONSTEXPR bool _LIBCPP_INLINE_VISIBILITY
+        -:  267:	empty()         const _NOEXCEPT { return __size == 0; }
+        -:  268:
+        -:  269:	// [string.view.access], element access
+        -:  270:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  271:	const_reference operator[](size_type __pos) const _NOEXCEPT { return __data[__pos]; }
+        -:  272:
+        -:  273:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  274:	const_reference at(size_type __pos) const
+        -:  275:	{
+        -:  276:		return __pos >= size()
+        -:  277:			? (__throw_out_of_range("string_view::at"), __data[0])
+        -:  278:			: __data[__pos];
+        -:  279:	}
+        -:  280:
+        -:  281:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  282:	const_reference front() const
+        -:  283:	{
+        -:  284:		return _LIBCPP_ASSERT(!empty(), "string_view::front(): string is empty"), __data[0];
+        -:  285:	}
+        -:  286:
+        -:  287:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  288:	const_reference back() const
+        -:  289:	{
+        -:  290:		return _LIBCPP_ASSERT(!empty(), "string_view::back(): string is empty"), __data[__size-1];
+        -:  291:	}
+        -:  292:
+        -:  293:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+function _ZNKSt3__117basic_string_viewIcNS_11char_traitsIcEEE4dataEv called 0 returned 0% blocks executed 0%
+    #####:  294:	const_pointer data() const _NOEXCEPT { return __data; }
+    $$$$$:  294-block  0
+        -:  295:
+        -:  296:	// [string.view.modifiers], modifiers:
+        -:  297:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  298:	void remove_prefix(size_type __n) _NOEXCEPT
+        -:  299:	{
+        -:  300:		_LIBCPP_ASSERT(__n <= size(), "remove_prefix() can't remove more than size()");
+        -:  301:		__data += __n;
+        -:  302:		__size -= __n;
+        -:  303:	}
+        -:  304:
+        -:  305:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  306:	void remove_suffix(size_type __n) _NOEXCEPT
+        -:  307:	{
+        -:  308:		_LIBCPP_ASSERT(__n <= size(), "remove_suffix() can't remove more than size()");
+        -:  309:		__size -= __n;
+        -:  310:	}
+        -:  311:
+        -:  312:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  313:	void swap(basic_string_view& __other) _NOEXCEPT
+        -:  314:	{
+        -:  315:		const value_type *__p = __data;
+        -:  316:		__data = __other.__data;
+        -:  317:		__other.__data = __p;
+        -:  318:
+        -:  319:		size_type __sz = __size;
+        -:  320:		__size = __other.__size;
+        -:  321:		__other.__size = __sz;
+        -:  322:	}
+        -:  323:
+        -:  324:	_LIBCPP_INLINE_VISIBILITY
+        -:  325:	size_type copy(_CharT* __s, size_type __n, size_type __pos = 0) const
+        -:  326:	{
+        -:  327:		if (__pos > size())
+        -:  328:			__throw_out_of_range("string_view::copy");
+        -:  329:		size_type __rlen = _VSTD::min(__n, size() - __pos);
+        -:  330:		_Traits::copy(__s, data() + __pos, __rlen);
+        -:  331:		return __rlen;
+        -:  332:	}
+        -:  333:
+        -:  334:	_LIBCPP_CONSTEXPR _LIBCPP_INLINE_VISIBILITY
+        -:  335:	basic_string_view substr(size_type __pos = 0, size_type __n = npos) const
+        -:  336:	{
+        -:  337:		return __pos > size()
+        -:  338:			? (__throw_out_of_range("string_view::substr"), basic_string_view())
+        -:  339:			: basic_string_view(data() + __pos, _VSTD::min(__n, size() - __pos));
+        -:  340:	}
+        -:  341:
+        -:  342:	_LIBCPP_CONSTEXPR_AFTER_CXX11 int compare(basic_string_view __sv) const _NOEXCEPT
+        -:  343:	{
+        -:  344:		size_type __rlen = _VSTD::min( size(), __sv.size());
+        -:  345:		int __retval = _Traits::compare(data(), __sv.data(), __rlen);
+        -:  346:		if ( __retval == 0 ) // first __rlen chars matched
+        -:  347:			__retval = size() == __sv.size() ? 0 : ( size() < __sv.size() ? -1 : 1 );
+        -:  348:		return __retval;
+        -:  349:	}
+        -:  350:
+        -:  351:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  352:	int compare(size_type __pos1, size_type __n1, basic_string_view __sv) const
+        -:  353:	{
+        -:  354:		return substr(__pos1, __n1).compare(__sv);
+        -:  355:	}
+        -:  356:
+        -:  357:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  358:	int compare(                       size_type __pos1, size_type __n1, 
+        -:  359:				basic_string_view __sv, size_type __pos2, size_type __n2) const
+        -:  360:	{
+        -:  361:		return substr(__pos1, __n1).compare(__sv.substr(__pos2, __n2));
+        -:  362:	}
+        -:  363:
+        -:  364:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  365:	int compare(const _CharT* __s) const _NOEXCEPT
+        -:  366:	{
+        -:  367:		return compare(basic_string_view(__s));
+        -:  368:	}
+        -:  369:
+        -:  370:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  371:	int compare(size_type __pos1, size_type __n1, const _CharT* __s) const
+        -:  372:	{
+        -:  373:		return substr(__pos1, __n1).compare(basic_string_view(__s));
+        -:  374:	}
+        -:  375:
+        -:  376:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  377:	int compare(size_type __pos1, size_type __n1, const _CharT* __s, size_type __n2) const
+        -:  378:	{
+        -:  379:		return substr(__pos1, __n1).compare(basic_string_view(__s, __n2));
+        -:  380:	}
+        -:  381:
+        -:  382:	// find
+        -:  383:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  384:	size_type find(basic_string_view __s, size_type __pos = 0) const _NOEXCEPT
+        -:  385:	{
+        -:  386:		_LIBCPP_ASSERT(__s.size() == 0 || __s.data() != nullptr, "string_view::find(): received nullptr");
+        -:  387:		return __str_find<value_type, size_type, traits_type, npos>
+        -:  388:			(data(), size(), __s.data(), __pos, __s.size());
+        -:  389:	}
+        -:  390:
+        -:  391:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  392:	size_type find(_CharT __c, size_type __pos = 0) const _NOEXCEPT
+        -:  393:	{
+        -:  394:		return __str_find<value_type, size_type, traits_type, npos>
+        -:  395:			(data(), size(), __c, __pos);
+        -:  396:	}
+        -:  397:
+        -:  398:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  399:	size_type find(const _CharT* __s, size_type __pos, size_type __n) const
+        -:  400:	{
+        -:  401:		_LIBCPP_ASSERT(__n == 0 || __s != nullptr, "string_view::find(): received nullptr");
+        -:  402:		return __str_find<value_type, size_type, traits_type, npos>
+        -:  403:			(data(), size(), __s, __pos, __n);
+        -:  404:	}
+        -:  405:
+        -:  406:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  407:	size_type find(const _CharT* __s, size_type __pos = 0) const
+        -:  408:	{
+        -:  409:		_LIBCPP_ASSERT(__s != nullptr, "string_view::find(): received nullptr");
+        -:  410:		return __str_find<value_type, size_type, traits_type, npos>
+        -:  411:			(data(), size(), __s, __pos, traits_type::length(__s));
+        -:  412:	}
+        -:  413:
+        -:  414:	// rfind
+        -:  415:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  416:	size_type rfind(basic_string_view __s, size_type __pos = npos) const _NOEXCEPT
+        -:  417:	{
+        -:  418:		_LIBCPP_ASSERT(__s.size() == 0 || __s.data() != nullptr, "string_view::find(): received nullptr");
+        -:  419:		return __str_rfind<value_type, size_type, traits_type, npos>
+        -:  420:			(data(), size(), __s.data(), __pos, __s.size());
+        -:  421:	}
+        -:  422:
+        -:  423:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  424:	size_type rfind(_CharT __c, size_type __pos = npos) const _NOEXCEPT
+        -:  425:	{
+        -:  426:		return __str_rfind<value_type, size_type, traits_type, npos>
+        -:  427:			(data(), size(), __c, __pos);
+        -:  428:	}
+        -:  429:
+        -:  430:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  431:	size_type rfind(const _CharT* __s, size_type __pos, size_type __n) const
+        -:  432:	{
+        -:  433:		_LIBCPP_ASSERT(__n == 0 || __s != nullptr, "string_view::rfind(): received nullptr");
+        -:  434:		return __str_rfind<value_type, size_type, traits_type, npos>
+        -:  435:			(data(), size(), __s, __pos, __n);
+        -:  436:	}
+        -:  437:
+        -:  438:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  439:	size_type rfind(const _CharT* __s, size_type __pos=npos) const
+        -:  440:	{
+        -:  441:		_LIBCPP_ASSERT(__s != nullptr, "string_view::rfind(): received nullptr");
+        -:  442:		return __str_rfind<value_type, size_type, traits_type, npos>
+        -:  443:			(data(), size(), __s, __pos, traits_type::length(__s));
+        -:  444:	}
+        -:  445:
+        -:  446:	// find_first_of
+        -:  447:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  448:	size_type find_first_of(basic_string_view __s, size_type __pos = 0) const _NOEXCEPT
+        -:  449:	{
+        -:  450:		_LIBCPP_ASSERT(__s.size() == 0 || __s.data() != nullptr, "string_view::find_first_of(): received nullptr");
+        -:  451:		return __str_find_first_of<value_type, size_type, traits_type, npos>
+        -:  452:			(data(), size(), __s.data(), __pos, __s.size());
+        -:  453:	}
+        -:  454:
+        -:  455:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  456:	size_type find_first_of(_CharT __c, size_type __pos = 0) const _NOEXCEPT
+        -:  457:	{ return find(__c, __pos); }
+        -:  458:
+        -:  459:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  460:	size_type find_first_of(const _CharT* __s, size_type __pos, size_type __n) const
+        -:  461:	{
+        -:  462:		_LIBCPP_ASSERT(__n == 0 || __s != nullptr, "string_view::find_first_of(): received nullptr");
+        -:  463:		return __str_find_first_of<value_type, size_type, traits_type, npos>
+        -:  464:			(data(), size(), __s, __pos, __n);
+        -:  465:	}
+        -:  466:
+        -:  467:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  468:	size_type find_first_of(const _CharT* __s, size_type __pos=0) const
+        -:  469:	{
+        -:  470:		_LIBCPP_ASSERT(__s != nullptr, "string_view::find_first_of(): received nullptr");
+        -:  471:		return __str_find_first_of<value_type, size_type, traits_type, npos>
+        -:  472:			(data(), size(), __s, __pos, traits_type::length(__s));
+        -:  473:	}
+        -:  474:
+        -:  475:	// find_last_of
+        -:  476:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  477:	size_type find_last_of(basic_string_view __s, size_type __pos=npos) const _NOEXCEPT
+        -:  478:	{
+        -:  479:		_LIBCPP_ASSERT(__s.size() == 0 || __s.data() != nullptr, "string_view::find_last_of(): received nullptr");
+        -:  480:		return __str_find_last_of<value_type, size_type, traits_type, npos>
+        -:  481:			(data(), size(), __s.data(), __pos, __s.size());
+        -:  482:	}
+        -:  483:
+        -:  484:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  485:	size_type find_last_of(_CharT __c, size_type __pos = npos) const _NOEXCEPT
+        -:  486:	{ return rfind(__c, __pos); }
+        -:  487:
+        -:  488:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  489:	size_type find_last_of(const _CharT* __s, size_type __pos, size_type __n) const
+        -:  490:	{
+        -:  491:		_LIBCPP_ASSERT(__n == 0 || __s != nullptr, "string_view::find_last_of(): received nullptr");
+        -:  492:		return __str_find_last_of<value_type, size_type, traits_type, npos>
+        -:  493:			(data(), size(), __s, __pos, __n);
+        -:  494:	}
+        -:  495:
+        -:  496:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  497:	size_type find_last_of(const _CharT* __s, size_type __pos=npos) const
+        -:  498:	{
+        -:  499:		_LIBCPP_ASSERT(__s != nullptr, "string_view::find_last_of(): received nullptr");
+        -:  500:		return __str_find_last_of<value_type, size_type, traits_type, npos>
+        -:  501:			(data(), size(), __s, __pos, traits_type::length(__s));
+        -:  502:	}
+        -:  503:
+        -:  504:	// find_first_not_of
+        -:  505:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  506:	size_type find_first_not_of(basic_string_view __s, size_type __pos=0) const _NOEXCEPT
+        -:  507:	{
+        -:  508:		_LIBCPP_ASSERT(__s.size() == 0 || __s.data() != nullptr, "string_view::find_first_not_of(): received nullptr");
+        -:  509:		return __str_find_first_not_of<value_type, size_type, traits_type, npos>
+        -:  510:			(data(), size(), __s.data(), __pos, __s.size());
+        -:  511:	}
+        -:  512:
+        -:  513:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  514:	size_type find_first_not_of(_CharT __c, size_type __pos=0) const _NOEXCEPT
+        -:  515:	{
+        -:  516:		return __str_find_first_not_of<value_type, size_type, traits_type, npos>
+        -:  517:			(data(), size(), __c, __pos);
+        -:  518:	}
+        -:  519:
+        -:  520:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  521:	size_type find_first_not_of(const _CharT* __s, size_type __pos, size_type __n) const
+        -:  522:	{
+        -:  523:		_LIBCPP_ASSERT(__n == 0 || __s != nullptr, "string_view::find_first_not_of(): received nullptr");
+        -:  524:		return __str_find_first_not_of<value_type, size_type, traits_type, npos>
+        -:  525:			(data(), size(), __s, __pos, __n);
+        -:  526:	}
+        -:  527:
+        -:  528:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  529:	size_type find_first_not_of(const _CharT* __s, size_type __pos=0) const
+        -:  530:	{
+        -:  531:		_LIBCPP_ASSERT(__s != nullptr, "string_view::find_first_not_of(): received nullptr");
+        -:  532:		return __str_find_first_not_of<value_type, size_type, traits_type, npos>
+        -:  533:			(data(), size(), __s, __pos, traits_type::length(__s));
+        -:  534:	}
+        -:  535:
+        -:  536:	// find_last_not_of
+        -:  537:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  538:	size_type find_last_not_of(basic_string_view __s, size_type __pos=npos) const _NOEXCEPT
+        -:  539:	{
+        -:  540:		_LIBCPP_ASSERT(__s.size() == 0 || __s.data() != nullptr, "string_view::find_last_not_of(): received nullptr");
+        -:  541:		return __str_find_last_not_of<value_type, size_type, traits_type, npos>
+        -:  542:			(data(), size(), __s.data(), __pos, __s.size());
+        -:  543:	}
+        -:  544:
+        -:  545:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  546:	size_type find_last_not_of(_CharT __c, size_type __pos=npos) const _NOEXCEPT
+        -:  547:	{
+        -:  548:		return __str_find_last_not_of<value_type, size_type, traits_type, npos>
+        -:  549:			(data(), size(), __c, __pos);
+        -:  550:	}
+        -:  551:
+        -:  552:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  553:	size_type find_last_not_of(const _CharT* __s, size_type __pos, size_type __n) const
+        -:  554:	{
+        -:  555:		_LIBCPP_ASSERT(__n == 0 || __s != nullptr, "string_view::find_last_not_of(): received nullptr");
+        -:  556:		return __str_find_last_not_of<value_type, size_type, traits_type, npos>
+        -:  557:			(data(), size(), __s, __pos, __n);
+        -:  558:	}
+        -:  559:
+        -:  560:	_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  561:	size_type find_last_not_of(const _CharT* __s, size_type __pos=npos) const
+        -:  562:	{
+        -:  563:		_LIBCPP_ASSERT(__s != nullptr, "string_view::find_last_not_of(): received nullptr");
+        -:  564:		return __str_find_last_not_of<value_type, size_type, traits_type, npos>
+        -:  565:			(data(), size(), __s, __pos, traits_type::length(__s));
+        -:  566:	}
+        -:  567:
+        -:  568:private:
+        -:  569:	const   value_type* __data;
+        -:  570:	size_type           __size;
+        -:  571:};
+        -:  572:
+        -:  573:
+        -:  574:// [string.view.comparison]
+        -:  575:// operator ==
+        -:  576:template<class _CharT, class _Traits>
+        -:  577:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  578:bool operator==(basic_string_view<_CharT, _Traits> __lhs,
+        -:  579:				basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  580:{
+        -:  581:	if ( __lhs.size() != __rhs.size()) return false;
+        -:  582:	return __lhs.compare(__rhs) == 0;
+        -:  583:}
+        -:  584:
+        -:  585:template<class _CharT, class _Traits>
+        -:  586:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  587:bool operator==(basic_string_view<_CharT, _Traits> __lhs,
+        -:  588:				typename common_type<basic_string_view<_CharT, _Traits> >::type __rhs) _NOEXCEPT
+        -:  589:{
+        -:  590:	if ( __lhs.size() != __rhs.size()) return false;
+        -:  591:	return __lhs.compare(__rhs) == 0;
+        -:  592:}
+        -:  593:
+        -:  594:template<class _CharT, class _Traits>
+        -:  595:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  596:bool operator==(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+        -:  597:				basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  598:{
+        -:  599:	if ( __lhs.size() != __rhs.size()) return false;
+        -:  600:	return __lhs.compare(__rhs) == 0;
+        -:  601:}
+        -:  602:
+        -:  603:
+        -:  604:// operator !=
+        -:  605:template<class _CharT, class _Traits>
+        -:  606:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  607:bool operator!=(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  608:{
+        -:  609:	if ( __lhs.size() != __rhs.size())
+        -:  610:		return true;
+        -:  611:	return __lhs.compare(__rhs) != 0;
+        -:  612:}
+        -:  613:
+        -:  614:template<class _CharT, class _Traits>
+        -:  615:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  616:bool operator!=(basic_string_view<_CharT, _Traits> __lhs,
+        -:  617:				typename common_type<basic_string_view<_CharT, _Traits> >::type __rhs) _NOEXCEPT
+        -:  618:{
+        -:  619:	if ( __lhs.size() != __rhs.size())
+        -:  620:		return true;
+        -:  621:	return __lhs.compare(__rhs) != 0;
+        -:  622:}
+        -:  623:
+        -:  624:template<class _CharT, class _Traits>
+        -:  625:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  626:bool operator!=(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+        -:  627:				basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  628:{
+        -:  629:	if ( __lhs.size() != __rhs.size())
+        -:  630:		return true;
+        -:  631:	return __lhs.compare(__rhs) != 0;
+        -:  632:}
+        -:  633:
+        -:  634:
+        -:  635:// operator <
+        -:  636:template<class _CharT, class _Traits>
+        -:  637:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  638:bool operator<(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  639:{
+        -:  640:	return __lhs.compare(__rhs) < 0;
+        -:  641:}
+        -:  642:
+        -:  643:template<class _CharT, class _Traits>
+        -:  644:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  645:bool operator<(basic_string_view<_CharT, _Traits> __lhs,
+        -:  646:				typename common_type<basic_string_view<_CharT, _Traits> >::type __rhs) _NOEXCEPT
+        -:  647:{
+        -:  648:	return __lhs.compare(__rhs) < 0;
+        -:  649:}
+        -:  650:
+        -:  651:template<class _CharT, class _Traits>
+        -:  652:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  653:bool operator<(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+        -:  654:				basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  655:{
+        -:  656:	return __lhs.compare(__rhs) < 0;
+        -:  657:}
+        -:  658:
+        -:  659:
+        -:  660:// operator >
+        -:  661:template<class _CharT, class _Traits>
+        -:  662:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  663:bool operator> (basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  664:{
+        -:  665:	return __lhs.compare(__rhs) > 0;
+        -:  666:}
+        -:  667:
+        -:  668:template<class _CharT, class _Traits>
+        -:  669:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  670:bool operator>(basic_string_view<_CharT, _Traits> __lhs,
+        -:  671:				typename common_type<basic_string_view<_CharT, _Traits> >::type __rhs) _NOEXCEPT
+        -:  672:{
+        -:  673:	return __lhs.compare(__rhs) > 0;
+        -:  674:}
+        -:  675:
+        -:  676:template<class _CharT, class _Traits>
+        -:  677:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  678:bool operator>(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+        -:  679:				basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  680:{
+        -:  681:	return __lhs.compare(__rhs) > 0;
+        -:  682:}
+        -:  683:
+        -:  684:
+        -:  685:// operator <=
+        -:  686:template<class _CharT, class _Traits>
+        -:  687:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  688:bool operator<=(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  689:{
+        -:  690:	return __lhs.compare(__rhs) <= 0;
+        -:  691:}
+        -:  692:
+        -:  693:template<class _CharT, class _Traits>
+        -:  694:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  695:bool operator<=(basic_string_view<_CharT, _Traits> __lhs,
+        -:  696:				typename common_type<basic_string_view<_CharT, _Traits> >::type __rhs) _NOEXCEPT
+        -:  697:{
+        -:  698:	return __lhs.compare(__rhs) <= 0;
+        -:  699:}
+        -:  700:
+        -:  701:template<class _CharT, class _Traits>
+        -:  702:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  703:bool operator<=(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+        -:  704:				basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  705:{
+        -:  706:	return __lhs.compare(__rhs) <= 0;
+        -:  707:}
+        -:  708:
+        -:  709:
+        -:  710:// operator >=
+        -:  711:template<class _CharT, class _Traits>
+        -:  712:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  713:bool operator>=(basic_string_view<_CharT, _Traits> __lhs, basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  714:{
+        -:  715:	return __lhs.compare(__rhs) >= 0;
+        -:  716:}
+        -:  717:
+        -:  718:
+        -:  719:template<class _CharT, class _Traits>
+        -:  720:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  721:bool operator>=(basic_string_view<_CharT, _Traits> __lhs,
+        -:  722:				typename common_type<basic_string_view<_CharT, _Traits> >::type __rhs) _NOEXCEPT
+        -:  723:{
+        -:  724:	return __lhs.compare(__rhs) >= 0;
+        -:  725:}
+        -:  726:
+        -:  727:template<class _CharT, class _Traits>
+        -:  728:_LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  729:bool operator>=(typename common_type<basic_string_view<_CharT, _Traits> >::type __lhs, 
+        -:  730:				basic_string_view<_CharT, _Traits> __rhs) _NOEXCEPT
+        -:  731:{
+        -:  732:	return __lhs.compare(__rhs) >= 0;
+        -:  733:}
+        -:  734:
+        -:  735:typedef basic_string_view<char>     string_view;
+        -:  736:typedef basic_string_view<char16_t> u16string_view;
+        -:  737:typedef basic_string_view<char32_t> u32string_view;
+        -:  738:typedef basic_string_view<wchar_t>  wstring_view;
+        -:  739:
+        -:  740:// [string.view.hash]
+        -:  741:template<class _CharT, class _Traits>
+        -:  742:struct _LIBCPP_TEMPLATE_VIS hash<basic_string_view<_CharT, _Traits> >
+        -:  743:    : public unary_function<basic_string_view<_CharT, _Traits>, size_t>
+        -:  744:{
+        -:  745:    size_t operator()(const basic_string_view<_CharT, _Traits> __val) const _NOEXCEPT;
+        -:  746:};
+        -:  747:
+        -:  748:template<class _CharT, class _Traits>
+        -:  749:size_t
+        -:  750:hash<basic_string_view<_CharT, _Traits> >::operator()(
+        -:  751:        const basic_string_view<_CharT, _Traits> __val) const _NOEXCEPT
+        -:  752:{
+        -:  753:    return __do_string_hash(__val.data(), __val.data() + __val.size());
+        -:  754:}
+        -:  755:
+        -:  756:
+        -:  757:#if _LIBCPP_STD_VER > 11 
+        -:  758:inline namespace literals
+        -:  759:{
+        -:  760:  inline namespace string_view_literals
+        -:  761:  {
+        -:  762:    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:  763:    basic_string_view<char> operator "" sv(const char *__str, size_t __len)
+        -:  764:    {
+        -:  765:        return basic_string_view<char> (__str, __len);
+        -:  766:    }
+        -:  767:
+        -:  768:    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:  769:    basic_string_view<wchar_t> operator "" sv(const wchar_t *__str, size_t __len)
+        -:  770:    {
+        -:  771:        return basic_string_view<wchar_t> (__str, __len);
+        -:  772:    }
+        -:  773:
+        -:  774:    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:  775:    basic_string_view<char16_t> operator "" sv(const char16_t *__str, size_t __len)
+        -:  776:    {
+        -:  777:        return basic_string_view<char16_t> (__str, __len);
+        -:  778:    }
+        -:  779:
+        -:  780:    inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
+        -:  781:    basic_string_view<char32_t> operator "" sv(const char32_t *__str, size_t __len)
+        -:  782:    {
+        -:  783:        return basic_string_view<char32_t> (__str, __len);
+        -:  784:    }
+        -:  785:  }
+        -:  786:}
+        -:  787:#endif
+        -:  788:_LIBCPP_END_NAMESPACE_STD
+        -:  789:
+        -:  790:_LIBCPP_POP_MACROS
+        -:  791:
+        -:  792:#endif // _LIBCPP_STRING_VIEW

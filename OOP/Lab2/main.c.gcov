@@ -1,0 +1,124 @@
+        -:    0:Source:main.c
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:void first()
+        -:    4:{
+        -:    5:	/*
+        -:    6:	This function is the eratostel sieve
+        -:    7:	it goes trough all the numbers non prime numbers
+        -:    8:	by starting at i=2 and going in i*i
+        -:    9:	so the numbers that have that are multiplyed
+        -:   10:	can't be prime numbers
+        -:   11:	*/
+        -:   12:	int n;
+    #####:   13:	printf("Enter the number until we need to print the prime number:");
+    #####:   14:	scanf("%d",&n);
+    #####:   15:	int ciur[10000]={0};
+    #####:   16:	for(int d=2;d*d<=n;d++)
+    #####:   17:         if(ciur[d]==0)
+    #####:   18:           for(int i=d*d;i<=n;i=i+d)
+    #####:   19:             ciur[i]=1;
+        -:   20:	//The numbers without values are prime
+        -:   21:	//Because it didn't have any divisers
+    #####:   22:	for(int i=2;i<=n;++i)
+    #####:   23:		if(ciur[i]==0)
+    #####:   24:			printf("%d ",i);
+    #####:   25:}
+        -:   26:
+        -:   27:int verf_prim(int n)
+        -:   28:{
+        -:   29:	/*Checks if a number is prime by
+        -:   30:	 going trough all the numbers until sqrt(n)
+        -:   31:	 and cheks if one of them divide n
+        -:   32:	 if it does,then the number is not prime
+        -:   33:	 */
+    #####:   34:	if(n==1) return 0;
+    #####:   35:	if(n==2) return 1;
+    #####:   36:	for(int i=2;i*i<=n;++i){
+    #####:   37:		if(n%i==0)return 0;
+    #####:   38:	}
+    #####:   39:	return 1;
+    #####:   40:}
+        -:   41:
+        -:   42:
+        -:   43:
+        -:   44:void second()
+        -:   45:{
+        -:   46:	/*This function will do the b subpoint
+        -:   47:	 *It will go trough all the array and check if the actual number
+        -:   48:	 is less the to next one
+        -:   49:	 if it is will verify if the sum of those number is prime
+        -:   50:	 if none of the condition are fullfield 
+        -:   51:	 then we will make the actual count of the maximum subsequance 0
+        -:   52:	 and the posible start the next number in the array
+        -:   53:	 If the actual counter number is bigger then the maximum
+        -:   54:	 we will make the maximum the actual counter number
+        -:   55:	 Then we will print the numbers with a for
+        -:   56:	 from the startIndex until the startIndex + the maximum number
+        -:   57:	 */
+        -:   58:	int vect[10000],n;
+    #####:   59:	printf("How many numbers you want your array to have: ");
+    #####:   60:	scanf("%d",&n);
+    #####:   61:	for(int i=0;i<n;++i)
+        -:   62:	{
+    #####:   63:		printf("Vector[%d]= ",i);
+    #####:   64:		scanf("%d",&vect[i]);
+    #####:   65:	}
+    #####:   66:	int actual = 0,maximum = 0,startIndex=0,maxI=0;
+        -:   67:	//Going from the first element until the last-1
+    #####:   68:	for(int i=0;i<n-1;++i)
+        -:   69:	{
+        -:   70:		//making a variable sum for easier use
+    #####:   71:		int sum = vect[i]+vect[i+1];
+        -:   72:		//verify if the sequance is increasing
+    #####:   73:		if(vect[i]<vect[i+1]){
+        -:   74:			//we verify if the sum is prime
+        -:   75:			//if it is we increas our actual counter
+    #####:   76:			if(verf_prim(sum)==1)
+    #####:   77:			{actual++;}
+        -:   78:			//if it's not we reset the actual counter
+        -:   79:			else{
+    #####:   80:				startIndex=i+1;
+    #####:   81:				actual=0;}
+    #####:   82:		}
+        -:   83:		//if it's not we reset the actual counter
+        -:   84:		else{
+    #####:   85:            startIndex=i+1;
+    #####:   86:            actual=0;}
+        -:   87:		//if we have a maximum actual couner
+        -:   88:		//we make it to be the new max
+    #####:   89:		if(actual>maximum){
+    #####:   90:			maximum=actual;
+    #####:   91:			maxI=startIndex;
+    #####:   92:		}
+    #####:   93:	}
+        -:   94:	//we increas maximum because we increas it initialy just by one if two number are found
+    #####:   95:	maximum++;
+    #####:   96:	if(maximum==1)
+    #####:   97:		printf("There are no such subsequence!");
+        -:   98:	else
+        -:   99:	{
+        -:  100:		//here we print the sequence
+    #####:  101:		printf("The lenght of the contiguous subsequence is %d\n",maximum);
+    #####:  102:		for(int i=maxI;i<maxI+maximum;i++)
+    #####:  103:			printf("%d ",vect[i]);
+        -:  104:	}
+    #####:  105:}
+        -:  106:
+        -:  107:
+        -:  108:
+        -:  109:int main(){
+        -:  110:	int op;
+    #####:  111:	printf("Please chose one of the following options: ");
+    #####:  112:	scanf("%d",&op);
+    #####:  113:	if(op==1)
+    #####:  114:		first();
+    #####:  115:	else if(op==2)
+    #####:  116:			second();
+        -:  117:	else
+    #####:  118:		return 0;
+    #####:  119:}

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - hi.info - /Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Controller.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../index.html">top level</a> - <a href="index.html">Users/adrianflorea/Codes/C++/OOP/Lab5-6STL</a> - Controller.h<span style="font-size: 80%;"> (source / <a href="Controller.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">hi.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-05-01 13:42:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : //</a>
+<span class="lineNum">       2 </span>            : //  Controller.h
+<span class="lineNum">       3 </span>            : //  Lab 5-6
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : //  Created by Adrian-Paul Florea on 3/25/18.
+<span class="lineNum">       6 </span>            : //  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+<span class="lineNum">       7 </span>            : //
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #ifndef Controller_h
+<span class="lineNum">      10 </span>            : #define Controller_h
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : #include &quot;Repo.h&quot;
+<span class="lineNum">      13 </span>            : #include &quot;TutorialValidator.h&quot;
+<span class="lineNum">      14 </span>            : #include &quot;FileWatchlist.h&quot;
+<a name="15"><span class="lineNum">      15 </span>            : #include &lt;vector&gt;</a>
+<span class="lineNum">      16 </span>            : 
+<span class="lineNum">      17 </span><span class="lineCov">          8 : class Controller</span>
+<span class="lineNum">      18 </span>            : {
+<span class="lineNum">      19 </span>            : private:
+<span class="lineNum">      20 </span>            :   Repository repo;
+<span class="lineNum">      21 </span>            :   FileWatchlist *watchList;
+<span class="lineNum">      22 </span>            :   TutorialValidator validator;
+<a name="23"><span class="lineNum">      23 </span>            : </a>
+<span class="lineNum">      24 </span>            : public:
+<span class="lineNum">      25 </span>            :   Controller(const Repository &amp;r, FileWatchlist *w, TutorialValidator v)
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">          4 :       : repo{r}, watchList{w}, validator{v} {}</span></a>
+<a name="27"><span class="lineNum">      27 </span>            : </a>
+<span class="lineNum">      28 </span><span class="lineCov">          1 :   Repository getRepo() const { return repo; }</span>
+<span class="lineNum">      29 </span><span class="lineCov">          1 :   Watchlist *getWatchlist() const { return watchList; }</span>
+<span class="lineNum">      30 </span>            : 
+<span class="lineNum">      31 </span>            :   // Adds a Tutorial with the given data to the Tutorial repository.
+<span class="lineNum">      32 </span>            :   int addTutorialToRepository(const std::string &amp;presenter,
+<span class="lineNum">      33 </span>            :                               const std::string &amp;title, double minutes,
+<span class="lineNum">      34 </span>            :                               double seconds, int likes,
+<span class="lineNum">      35 </span>            :                               const std::string &amp;source);
+<span class="lineNum">      36 </span>            :   int deleteTutorialToRepository(const std::string &amp;presenter,
+<span class="lineNum">      37 </span>            :                                  const std::string &amp;title);
+<span class="lineNum">      38 </span>            :   int updateTutorialToRepository(const std::string &amp;presenter,
+<span class="lineNum">      39 </span>            :                                  const std::string &amp;title,
+<span class="lineNum">      40 </span>            :                                  const std::string &amp;newPresenter,
+<span class="lineNum">      41 </span>            :                                  const std::string &amp;newTitle, double minutes,
+<span class="lineNum">      42 </span>            :                                  double seconds, int likes,
+<span class="lineNum">      43 </span>            :                                  const std::string &amp;source);
+<span class="lineNum">      44 </span>            :   int deleteTutorialWatchlistNameAndPresenterCtrl(const std::string &amp;presenter,
+<span class="lineNum">      45 </span>            :                                                   const std::string &amp;title,
+<span class="lineNum">      46 </span>            :                                                   bool like);
+<span class="lineNum">      47 </span>            :   // Adds all the tutorialss from the repository, that have the given presenter,
+<span class="lineNum">      48 </span>            :   // to the current Watchlist.
+<span class="lineNum">      49 </span>            :   void addAllTutorialsByPresenterToWatchlist(const std::string &amp;presenter);
+<span class="lineNum">      50 </span>            :   void addAllTutorialsToWatchlist();
+<span class="lineNum">      51 </span>            :   void addCurrentWatchlist();
+<span class="lineNum">      52 </span>            :   std::vector&lt;Tutorial&gt; sorted();
+<span class="lineNum">      53 </span>            :   int deleteTutorialWatchlist(const Tutorial &amp;tutorial);
+<span class="lineNum">      54 </span>            :   void playWatchlist(int option);
+<span class="lineNum">      55 </span>            :   void write();
+<span class="lineNum">      56 </span>            :   /*
+<span class="lineNum">      57 </span>            :     Saves the Watchlist.
+<span class="lineNum">      58 </span>            :     Throws: FileException - if the given file cannot be opened.
+<span class="lineNum">      59 </span>            :     */
+<span class="lineNum">      60 </span>            :   void saveWatchlist();
+<span class="lineNum">      61 </span>            : 
+<span class="lineNum">      62 </span>            :   /*
+<span class="lineNum">      63 </span>            :     Opens the Watchlist, with an appropriate application.
+<span class="lineNum">      64 </span>            :     Throws: FileException - if the given file cannot be opened.
+<span class="lineNum">      65 </span>            :     */
+<span class="lineNum">      66 </span>            :   void openWatchlist() const;
+<span class="lineNum">      67 </span>            :   void nextTutorialWatchlist(int option);
+<span class="lineNum">      68 </span>            :   void tests();
+<span class="lineNum">      69 </span>            :   void testAddRepo();
+<span class="lineNum">      70 </span>            :   void testDeleteRepo();
+<span class="lineNum">      71 </span>            :   void testUpdateRepo();
+<span class="lineNum">      72 </span>            :   void testDeleteSpecificWatchlis();
+<span class="lineNum">      73 </span>            :   void testAddWatchlist();
+<span class="lineNum">      74 </span>            :   void testDeleteWatchlist();
+<span class="lineNum">      75 </span>            :   void testPlay();
+<span class="lineNum">      76 </span>            :   void testNext();
+<span class="lineNum">      77 </span>            :   void testGet();
+<span class="lineNum">      78 </span>            : };
+<span class="lineNum">      79 </span>            : 
+<span class="lineNum">      80 </span>            : #endif /* Controller_h */
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

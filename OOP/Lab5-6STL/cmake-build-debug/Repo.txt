@@ -1,0 +1,11 @@
+Derek Banas,C++ Programming,70:32,0,www
+Gleesik,#01 Tutorial C++ |Introducere +Visual Studio |Gleesik™,14:6,0,www
+TheChernoProject,How C++ Works,20:20,0,www
+Easy Programming,C++ Tutorials From Basic to Advance,553:4,0,www
+Videotutorial.ro,Introducere în programare -tutorial C++ -cursul 1,553:4,0,ww
+thenewboston,Buckys C++ Programming Tutorials -38 -Introduction to Pointers,6:7,0,0
+Jerry Banfield,Start C++ ProgrammingToday !,378:23,0,0
+ProgrammingKnowledge,C++ Tutorial |Learn C++ programming,756:20,2,1
+ProgrammingKnowledge,C Programming Tutorial |Learn C programming |C language,260:20,1,1
+Thenewboston,Buckys C++ Programming Tutorials -12 -Introduction to Classes andObjects,8:25,0,0
+Aop,fdsfsd,21:21,4,www

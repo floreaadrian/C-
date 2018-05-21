@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Lab5_6STL"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab_5_6">
+				<Option output="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Lab_5_6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_5_6"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab_5_6/fast">
+				<Option output="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Lab_5_6" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab_5_6/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -j4 -f &quot;/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/CSVWatchlist.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/CSVWatchlist.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Controller.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Controller.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/FileWatchlist.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/FileWatchlist.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Filter.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Filter.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/HTMLWatchlist.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/HTMLWatchlist.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Repo.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Repo.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/RepositoryExceptions.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/RepositoryExceptions.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Tutorial.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Tutorial.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/TutorialValidator.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/TutorialValidator.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/UI.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/UI.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Utils.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Utils.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Watchlist.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Watchlist.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/main.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/mainwindow.cpp">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/mainwindow.h">
+			<Option target="Lab_5_6"/>
+		</Unit>
+		<Unit filename="/Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - hi.info - /Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/CSVWatchlist.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../index.html">top level</a> - <a href="index.html">Users/adrianflorea/Codes/C++/OOP/Lab5-6STL</a> - CSVWatchlist.cpp<span style="font-size: 80%;"> (source / <a href="CSVWatchlist.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">hi.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntryLo">31.6 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-05-01 13:42:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntryLo">33.3 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : //</a>
+<span class="lineNum">       2 </span>            : //  CSVWatchlist.cpp
+<span class="lineNum">       3 </span>            : //  Lab5-6STL
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : //  Created by Adrian-Paul Florea on 4/23/18.
+<span class="lineNum">       6 </span>            : //  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+<span class="lineNum">       7 </span>            : //
+<span class="lineNum">       8 </span>            : #include &quot;CSVWatchlist.h&quot;
+<span class="lineNum">       9 </span>            : #include &lt;fstream&gt;
+<span class="lineNum">      10 </span>            : #include &quot;RepositoryExceptions.h&quot;
+<span class="lineNum">      11 </span>            : 
+<a name="12"><span class="lineNum">      12 </span>            : using namespace std;</a>
+<span class="lineNum">      13 </span>            : 
+<span class="lineNum">      14 </span>            : void CSVWatchlist::writeToFile()
+<span class="lineNum">      15 </span>            : {
+<span class="lineNum">      16 </span><span class="lineNoCov">          0 :     ofstream f(this-&gt;filename);</span>
+<span class="lineNum">      17 </span>            :     
+<span class="lineNum">      18 </span><span class="lineNoCov">          0 :     if (!f.is_open())</span>
+<span class="lineNum">      19 </span><span class="lineNoCov">          0 :         throw FileException(&quot;The file could not be opened!&quot;);</span>
+<span class="lineNum">      20 </span>            :     
+<span class="lineNum">      21 </span><span class="lineNoCov">          0 :     for (auto s : this-&gt;TutorialInWatch)</span>
+<span class="lineNum">      22 </span><span class="lineNoCov">          0 :         f &lt;&lt; s;</span>
+<span class="lineNum">      23 </span>            :     
+<span class="lineNum">      24 </span><span class="lineNoCov">          0 :     f.close();</span>
+<a name="25"><span class="lineNum">      25 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      26 </span>            : 
+<span class="lineNum">      27 </span>            : void CSVWatchlist::readFromFile()
+<span class="lineNum">      28 </span>            : {
+<span class="lineNum">      29 </span><span class="lineCov">          6 :     ifstream file(this-&gt;filename);</span>
+<span class="lineNum">      30 </span>            : 
+<span class="lineNum">      31 </span><span class="lineCov">         12 :     if (!file.is_open())</span>
+<span class="lineNum">      32 </span><span class="lineNoCov">          0 :         throw FileException(&quot;The file could not be opened!&quot;);</span>
+<span class="lineNum">      33 </span>            : 
+<span class="lineNum">      34 </span><span class="lineCov">          6 :     Tutorial s;</span>
+<span class="lineNum">      35 </span><span class="lineCov">         24 :     while (file &gt;&gt; s)</span>
+<span class="lineNum">      36 </span><span class="lineNoCov">          0 :         this-&gt;TutorialInWatch.push_back(s);</span>
+<span class="lineNum">      37 </span>            : 
+<span class="lineNum">      38 </span><span class="lineCov">          6 :     file.close();</span>
+<a name="39"><span class="lineNum">      39 </span><span class="lineCov">          6 : }</span></a>
+<span class="lineNum">      40 </span>            : 
+<span class="lineNum">      41 </span>            : void CSVWatchlist::displayWatchlist() const
+<span class="lineNum">      42 </span>            : {
+<span class="lineNum">      43 </span><span class="lineNoCov">          0 :     string aux = &quot;\&quot;&quot; + this-&gt;filename + &quot;\&quot;&quot;; // if the path contains spaces, we must put it inside quotations</span>
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :     string link = &quot;open -a Numbers &quot; + aux;</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :     system(link.c_str());</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

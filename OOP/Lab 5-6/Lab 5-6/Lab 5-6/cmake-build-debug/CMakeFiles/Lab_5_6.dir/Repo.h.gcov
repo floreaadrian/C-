@@ -1,0 +1,61 @@
+        -:    0:Source:/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/./Repo.h
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1://
+        -:    2://  Repo.h
+        -:    3://  Lab 5-6
+        -:    4://
+        -:    5://  Created by Adrian-Paul Florea on 3/25/18.
+        -:    6://  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+        -:    7://
+        -:    8:
+        -:    9:#ifndef Repo_h
+        -:   10:#define Repo_h
+        -:   11:
+        -:   12:#pragma once
+        -:   13:#include "DynamicArray.h"
+        -:   14:#include "Tutorial.h"
+        -:   15:
+function _ZN10RepositoryD1Ev called 0 returned 0% blocks executed 0%
+function _ZN10RepositoryC1ERKS_ called 0 returned 0% blocks executed 0%
+function _ZN10RepositoryC2ERKS_ called 0 returned 0% blocks executed 0%
+function _ZN10RepositoryD2Ev called 0 returned 0% blocks executed 0%
+    #####:   16:class Repository {
+    $$$$$:   16-block  0
+    $$$$$:   16-block  1
+    $$$$$:   16-block  2
+    $$$$$:   16-block  3
+        -:   17:private:
+        -:   18:  DynamicArray<Tutorial> Tutorials;
+        -:   19:
+        -:   20:public:
+        -:   21:  /*
+        -:   22:   Default constructu=or.
+        -:   23:   Initializes an object of type repository.
+        -:   24:   */
+function _ZN10RepositoryC1Ev called 0 returned 0% blocks executed 0%
+function _ZN10RepositoryC2Ev called 0 returned 0% blocks executed 0%
+    #####:   25:  Repository() {}
+    $$$$$:   25-block  0
+    $$$$$:   25-block  1
+        -:   26:
+        -:   27:  /*
+        -:   28:   Adds a Tutorial to the repository.
+        -:   29:   Input: s - Tutorial.
+        -:   30:   Output: the Tutorial is added to the repository.
+        -:   31:   */
+        -:   32:  int addTutorial(const Tutorial &s);
+        -:   33:  int deleteTutorial(const std::string &presenter, const std::string &title);
+        -:   34:  int updateTutorial(const std::string &presenter, const std::string &title,
+        -:   35:                     const Tutorial &s);
+        -:   36:  void likeTutorial(const std::string &presenter, const std::string &title);
+        -:   37:  DynamicArray<Tutorial> getTutorials() const { return Tutorials; }
+        -:   38:  void tests();
+        -:   39:  void addTest();
+        -:   40:  void deleteTest();
+        -:   41:  void updateTest();
+        -:   42:  void likeTests();
+        -:   43:};
+        -:   44:#endif /* Repo_hpp */

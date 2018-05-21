@@ -42,6 +42,8 @@ public:
   // Adds all the tutorialss from the repository, that have the given presenter,
   // to the current playlist.
   void addAllTutorialsByPresenterToWatchlist(const std::string &presenter);
+  void addAllTutorialsToWatchlist();
+  DynamicArray<Tutorial> Sort();
   int deleteTutorialWatchlist(const Tutorial &tutorial);
   void playWatchlist();
   void nextTutorialWatchlist();

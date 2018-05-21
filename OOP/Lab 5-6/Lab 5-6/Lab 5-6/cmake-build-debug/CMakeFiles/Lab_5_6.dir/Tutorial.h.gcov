@@ -1,0 +1,99 @@
+        -:    0:Source:/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/./Tutorial.h
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1://
+        -:    2://  Tutorial.h
+        -:    3://  Lab 5-6
+        -:    4://
+        -:    5://  Created by Adrian-Paul Florea on 3/25/18.
+        -:    6://  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+        -:    7://
+        -:    8:
+        -:    9:#ifndef Tutorial_h
+        -:   10:#define Tutorial_h
+        -:   11:
+        -:   12:#include <iostream>
+        -:   13:
+        -:   14:class Duration {
+        -:   15:private:
+        -:   16:  double minutes;
+        -:   17:  double seconds;
+        -:   18:
+        -:   19:public:
+        -:   20:  Duration() : minutes(0), seconds(0) {}
+function _ZN8DurationC1Edd called 0 returned 0% blocks executed 0%
+function _ZN8DurationC2Edd called 0 returned 0% blocks executed 0%
+    #####:   21:  Duration(double min, double sec) : minutes(min), seconds(sec) {}
+    $$$$$:   21-block  0
+    $$$$$:   21-block  1
+        -:   22:
+        -:   23:  double getMinutes() const { return minutes; }
+        -:   24:  double getSeconds() const { return seconds; }
+        -:   25:  void setMinutes(double min) { minutes = min; }
+        -:   26:  void setSeconds(double sec) { seconds = sec; }
+        -:   27:};
+        -:   28:
+function _ZN8TutorialD1Ev called 0 returned 0% blocks executed 0%
+function _ZN8TutorialaSERKS_ called 0 returned 0% blocks executed 0%
+function _ZN8TutorialD2Ev called 0 returned 0% blocks executed 0%
+function _ZN8TutorialC1ERKS_ called 0 returned 0% blocks executed 0%
+function _ZN8TutorialC2ERKS_ called 0 returned 0% blocks executed 0%
+    #####:   29:class Tutorial {
+    $$$$$:   29-block  0
+    $$$$$:   29-block  1
+    $$$$$:   29-block  2
+    $$$$$:   29-block  3
+    $$$$$:   29-block  4
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   29-block  5
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   29-block  6
+    $$$$$:   29-block  7
+    $$$$$:   29-block  8
+    $$$$$:   29-block  9
+    $$$$$:   29-block 10
+        -:   30:private:
+        -:   31:  std::string title;
+        -:   32:  std::string presenter;
+        -:   33:  Duration duration;
+        -:   34:  int likes;
+        -:   35:  std::string source; // youtube Link
+        -:   36:
+        -:   37:public:
+        -:   38:  // default constructor for a Tutorial
+        -:   39:  Tutorial();
+        -:   40:
+        -:   41:  // constructor with parameters
+        -:   42:  Tutorial(const std::string &artist, const std::string &title,
+        -:   43:           const Duration &duration, const int &likes,
+        -:   44:           const std::string &source);
+        -:   45:
+function _ZNK8Tutorial8getTitleEv called 0 returned 0% blocks executed 0%
+    #####:   46:  std::string getTitle() const { return title; }
+    $$$$$:   46-block  0
+function _ZNK8Tutorial12getPresenterEv called 0 returned 0% blocks executed 0%
+    #####:   47:  std::string getPresenter() const { return presenter; }
+    $$$$$:   47-block  0
+        -:   48:  Duration getDuration() const { return duration; }
+        -:   49:  std::string getSource() const { return source; }
+        -:   50:  int getLikes() const { return likes; }
+        -:   51:  // Plays the current Tutorial: the page corresponding to the source link is
+        -:   52:  // opened in a browser.
+        -:   53:  void upLike();
+        -:   54:  friend bool operator==(const Tutorial &a, const Tutorial &b);
+        -:   55:  void play();
+        -:   56:  void tests();
+        -:   57:  void titleTest();
+        -:   58:  void presenterTest();
+        -:   59:  void durationTest();
+        -:   60:  void sourceTest();
+        -:   61:  void likeTest();
+        -:   62:  void upLikeTest();
+        -:   63:  void equalTest();
+        -:   64:};
+        -:   65:
+        -:   66:#endif /* Tutorial_h */

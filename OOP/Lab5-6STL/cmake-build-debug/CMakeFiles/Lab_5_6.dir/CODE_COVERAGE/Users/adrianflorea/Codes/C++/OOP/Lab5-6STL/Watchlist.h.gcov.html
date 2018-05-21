@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - hi.info - /Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/Watchlist.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../index.html">top level</a> - <a href="index.html">Users/adrianflorea/Codes/C++/OOP/Lab5-6STL</a> - Watchlist.h<span style="font-size: 80%;"> (source / <a href="Watchlist.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">hi.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-05-01 13:42:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntryMed">85.7 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : //</a>
+<span class="lineNum">       2 </span>            : //  Watchlist.h
+<span class="lineNum">       3 </span>            : //  Lab 5-6
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : //  Created by Adrian-Paul Florea on 4/3/18.
+<span class="lineNum">       6 </span>            : //  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+<span class="lineNum">       7 </span>            : //
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #ifndef Watchlist_h
+<span class="lineNum">      10 </span>            : #define Watchlist_h
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : #pragma once
+<span class="lineNum">      13 </span>            : #include &lt;vector&gt;
+<span class="lineNum">      14 </span>            : #include &quot;Tutorial.h&quot;
+<span class="lineNum">      15 </span>            : class Watchlist {
+<span class="lineNum">      16 </span>            : protected:
+<span class="lineNum">      17 </span>            :   std::vector&lt;Tutorial&gt; Tutorials;
+<span class="lineNum">      18 </span>            :   std::vector&lt;Tutorial&gt; TutorialInWatch;
+<span class="lineNum">      19 </span>            :   int current;
+<span class="lineNum">      20 </span>            :   int currentIn;
+<span class="lineNum">      21 </span>            :   std::string filename;
+<span class="lineNum">      22 </span>            : 
+<span class="lineNum">      23 </span>            : public:
+<span class="lineNum">      24 </span>            :   Watchlist();
+<span class="lineNum">      25 </span>            : 
+<span class="lineNum">      26 </span>            :   // Adds a tutorial to the playlist.
+<span class="lineNum">      27 </span>            :   void add(const Tutorial &amp;tutorial);
+<span class="lineNum">      28 </span>            :   void addWatch();
+<span class="lineNum">      29 </span>            :   int deleteTutorial(const Tutorial &amp;e);
+<a name="30"><span class="lineNum">      30 </span>            :   // Returns the tutorial that is currently playing.</a>
+<a name="31"><span class="lineNum">      31 </span>            :   Tutorial getCurrentTutorial(int option);</a>
+<span class="lineNum">      32 </span><span class="lineCov">         14 :   int getCurrentNumber() { return this-&gt;current; }</span>
+<a name="33"><span class="lineNum">      33 </span><span class="lineCov">          3 :   int getCurrentNumberIn() { return this-&gt;currentIn; }</span></a>
+<a name="34"><span class="lineNum">      34 </span>            : </a>
+<span class="lineNum">      35 </span><span class="lineCov">         22 :   std::vector&lt;Tutorial&gt; getTutorials() const { return this-&gt;Tutorials; }</span>
+<span class="lineNum">      36 </span><span class="lineCov">         12 :   std::vector&lt;Tutorial&gt; getWatch() const { return this-&gt;TutorialInWatch; }</span>
+<span class="lineNum">      37 </span>            :   int deleteTutorialWatchlistNameAndPresenter(const std::string &amp;presenter,
+<span class="lineNum">      38 </span>            :                                               const std::string &amp;title);
+<span class="lineNum">      39 </span>            :   // Starts the playlist - plays the first tutorial.
+<span class="lineNum">      40 </span>            :   void play(int option);
+<span class="lineNum">      41 </span>            :   Tutorial findByPresenterAndTitle(const std::string &amp;presenter,
+<span class="lineNum">      42 </span>            :                                    const std::string &amp;title);
+<span class="lineNum">      43 </span>            :   int findByPresenterAndTitlePos(const std::string &amp;presenter,
+<span class="lineNum">      44 </span>            :                                  const std::string &amp;title);
+<span class="lineNum">      45 </span>            :   // Plays the next tutorial in the playlist.
+<span class="lineNum">      46 </span>            :   void next(int option);
+<span class="lineNum">      47 </span>            :   std::vector&lt;Tutorial&gt; sorted();
+<span class="lineNum">      48 </span>            :   void writeToFile();
+<span class="lineNum">      49 </span>            :   // Checks if the playlist is empty.
+<span class="lineNum">      50 </span>            :   bool isEmpty();
+<span class="lineNum">      51 </span>            :   // tests
+<span class="lineNum">      52 </span>            :   void tests();
+<span class="lineNum">      53 </span>            :   void addTest();
+<span class="lineNum">      54 </span>            :   void deleteElemTest();
+<span class="lineNum">      55 </span>            :   void getCurrentTest();
+<span class="lineNum">      56 </span>            :   void getCurrentNumberTest();
+<span class="lineNum">      57 </span>            :   void deleteTest();
+<span class="lineNum">      58 </span>            :   void playTest();
+<span class="lineNum">      59 </span>            :   void nextTest();
+<a name="60"><span class="lineNum">      60 </span>            :   void emptyTest();</a>
+<span class="lineNum">      61 </span>            :   void sortTest();
+<span class="lineNum">      62 </span><span class="lineCov">         40 :   virtual ~Watchlist() {}</span>
+<span class="lineNum">      63 </span>            : };
+<span class="lineNum">      64 </span>            : 
+<span class="lineNum">      65 </span>            : #endif /* Watchlist_h */
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

@@ -1,0 +1,523 @@
+        -:    0:Source:/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/main.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1://
+        -:    2://  main.cpp
+        -:    3://  Lab 5-6
+        -:    4://
+        -:    5://  Created by Adrian-Paul Florea on 3/25/18.
+        -:    6://  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+        -:    7://
+        -:    8:
+        -:    9:#include "Tutorial.h"
+        -:   10:#include "UI.h"
+        -:   11:
+        -:   12:using namespace std;
+        -:   13:
+function _Z5testsv called 0 returned 0% blocks executed 0%
+        -:   14:void tests() {
+    #####:   15:  Repository repo{};
+    $$$$$:   15-block  0
+    #####:   16:  repo.tests();
+    $$$$$:   16-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   17:  Watchlist watch{};
+    $$$$$:   17-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   18:  watch.tests();
+    $$$$$:   18-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   19:  Controller ctrl{repo};
+    $$$$$:   19-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   20:  ctrl.tests();
+    $$$$$:   20-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   21:  Tutorial tutorial{};
+    $$$$$:   21-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   22:  tutorial.tests();
+    $$$$$:   22-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   23:  DynamicArray<Tutorial> array{};
+    $$$$$:   23-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   24:  array.tests();
+    $$$$$:   24-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   25:}
+    $$$$$:   25-block  0
+    $$$$$:   25-block  1
+    $$$$$:   25-block  2
+    $$$$$:   25-block  3
+    $$$$$:   25-block  4
+    $$$$$:   25-block  5
+    $$$$$:   25-block  6
+    $$$$$:   25-block  7
+    $$$$$:   25-block  8
+    $$$$$:   25-block  9
+    $$$$$:   25-block 10
+        -:   26:
+function main called 0 returned 0% blocks executed 0%
+        -:   27:int main(int argc, const char *argv[]) {
+    #####:   28:  tests();
+    #####:   29:  Repository repo{};
+        -:   30:  // add some Tutorials
+    #####:   31:  Tutorial s1{"Derek Banas", "C++ Programming", Duration{70, 32}, 0,
+    $$$$$:   31-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   31-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   31-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   31-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   31-block  4
+    $$$$$:   31-block  5
+    $$$$$:   31-block  6
+    #####:   32:              "https://www.youtube.com/watch?v=Rub-JsjMhWY"};
+    $$$$$:   32-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   33:  Tutorial s2{
+    $$$$$:   33-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   33-block  1
+    $$$$$:   33-block  2
+    $$$$$:   33-block  3
+    #####:   34:      "Gleesik ", "#01 Tutorial C++ |Introducere +Visual Studio |Gleesik™",
+    $$$$$:   34-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   34-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   35:      Duration{14, 6}, 0, "https://www.youtube.com/watch?v=lAvIuQIhbOQ"};
+    $$$$$:   35-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   35-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   36:  Tutorial s3{"TheChernoProject", "How C++ Works", Duration{20, 20}, 0,
+    $$$$$:   36-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   36-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   36-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   36-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   36-block  4
+    $$$$$:   36-block  5
+    $$$$$:   36-block  6
+    #####:   37:              "https://www.youtube.com/watch?v=SfGuIVzE_Os"};
+    $$$$$:   37-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   38:  Tutorial s4{"Easy Programming", "C++ Tutorials From Basic to Advance",
+    $$$$$:   38-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   38-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   38-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   38-block  3
+    $$$$$:   38-block  4
+    $$$$$:   38-block  5
+    #####:   39:              Duration{553, 4}, 0,
+    $$$$$:   39-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   40:              "https://www.youtube.com/watch?v=mUQZ1qmKlLY"};
+    $$$$$:   40-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   41:  Tutorial s5{
+    $$$$$:   41-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   41-block  1
+    $$$$$:   41-block  2
+    $$$$$:   41-block  3
+    #####:   42:      "Videotutorial.ro", "Introducere în programare -tutorial C++ -cursul 1",
+    $$$$$:   42-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   42-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   43:      Duration{15, 52}, 0, "https://www.youtube.com/watch?v=JjY9U9lu37I"};
+    $$$$$:   43-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   43-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   44:  Tutorial s6{"thenewboston",
+    $$$$$:   44-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   44-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   44-block  2
+    $$$$$:   44-block  3
+    $$$$$:   44-block  4
+    #####:   45:              "Buckys C++ Programming Tutorials -38 -Introduction to Pointers",
+    $$$$$:   45-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   46:              Duration{6, 7}, 0, "https://www.youtube.com/watch?v=Fa6S8Pz924k"};
+    $$$$$:   46-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   46-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:   47:  Tutorial s7{"Jerry Banfield", "Start C++ ProgrammingToday !",
+    $$$$$:   47-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   47-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   47-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   47-block  3
+    $$$$$:   47-block  4
+    $$$$$:   47-block  5
+    #####:   48:              Duration{378, 23}, 0,
+    $$$$$:   48-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   49:              "https://www.youtube.com/watch?v=GNxVXPPZS_w"};
+    $$$$$:   49-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   50:  Tutorial s8{"ProgrammingKnowledge", "C++ Tutorial |Learn C++ programming",
+    $$$$$:   50-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   50-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   50-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   50-block  3
+    $$$$$:   50-block  4
+    $$$$$:   50-block  5
+    #####:   51:              Duration{756, 20}, 0,
+    $$$$$:   51-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   52:              "https://www.youtube.com/watch?v=MhYECGUzdA4"};
+    $$$$$:   52-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   53:  Tutorial s9{"ProgrammingKnowledge",
+    $$$$$:   53-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   53-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   53-block  2
+    $$$$$:   53-block  3
+    $$$$$:   53-block  4
+    #####:   54:              "C Programming Tutorial |Learn C programming |C language",
+    $$$$$:   54-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   55:              Duration{260, 20}, 0,
+    $$$$$:   55-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   56:              "https://www.youtube.com/watch?v=-CpG3oATGIs"};
+    $$$$$:   56-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   57:  Tutorial s10{"thenewboston ",
+    $$$$$:   57-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   57-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   57-block  2
+    $$$$$:   57-block  3
+    $$$$$:   57-block  4
+    #####:   58:               "Buckys C++ Programming Tutorials -12 -Introduction to Classes "
+    $$$$$:   58-block  0
+branch  0 never executed
+branch  1 never executed
+        -:   59:               "andObjects",
+    #####:   60:               Duration{8, 25}, 0,
+    $$$$$:   60-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   61:               "https://www.youtube.com/watch?v=ABRP_5RYhqU"};
+    $$$$$:   61-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   62:  Tutorial s11{"a", "a", Duration{1, 1}, 0, "https://google.com"};
+    $$$$$:   62-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   62-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   62-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   62-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   62-block  4
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   62-block  5
+    $$$$$:   62-block  6
+    $$$$$:   62-block  7
+    #####:   63:  Tutorial s12{"a", "b", Duration{1, 1}, 0, "https://facebook.com"};
+    $$$$$:   63-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   63-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   63-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   63-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   63-block  4
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   63-block  5
+    $$$$$:   63-block  6
+    $$$$$:   63-block  7
+    #####:   64:  Tutorial s13{"a", "e", Duration{1, 1}, 0, "https://apple.com"};
+    $$$$$:   64-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   64-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   64-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   64-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   64-block  4
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   64-block  5
+    $$$$$:   64-block  6
+    $$$$$:   64-block  7
+    #####:   65:  Tutorial s14{"a", "c", Duration{23, 1}, 0, "https://apple.com"};
+    $$$$$:   65-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   65-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   65-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   65-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   65-block  4
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   65-block  5
+    $$$$$:   65-block  6
+    $$$$$:   65-block  7
+    #####:   66:  Tutorial s15{"a", "f", Duration{5, 1}, 0, "https://apple.com"};
+    $$$$$:   66-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:   66-block  1
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   66-block  2
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   66-block  3
+branch  6 never executed
+branch  7 never executed
+    $$$$$:   66-block  4
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   66-block  5
+    $$$$$:   66-block  6
+    $$$$$:   66-block  7
+    #####:   67:  repo.addTutorial(s1);
+    $$$$$:   67-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   68:  repo.addTutorial(s2);
+    $$$$$:   68-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   69:  repo.addTutorial(s3);
+    $$$$$:   69-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   70:  repo.addTutorial(s4);
+    $$$$$:   70-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   71:  repo.addTutorial(s5);
+    $$$$$:   71-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   72:  repo.addTutorial(s6);
+    $$$$$:   72-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   73:  repo.addTutorial(s7);
+    $$$$$:   73-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   74:  repo.addTutorial(s8);
+    $$$$$:   74-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   75:  repo.addTutorial(s9);
+    $$$$$:   75-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   76:  repo.addTutorial(s10);
+    $$$$$:   76-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   77:  repo.addTutorial(s11);
+    $$$$$:   77-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   78:  repo.addTutorial(s12);
+    $$$$$:   78-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   79:  repo.addTutorial(s13);
+    $$$$$:   79-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   80:  repo.addTutorial(s14);
+    $$$$$:   80-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   81:  repo.addTutorial(s15);
+    $$$$$:   81-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   82:  Controller ctrl{repo};
+    $$$$$:   82-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   83:  UI ui{ctrl};
+    $$$$$:   83-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   84:  ui.run();
+    $$$$$:   84-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   85:  return 0;
+    #####:   86:}
+    $$$$$:   86-block  0
+    $$$$$:   86-block  1
+    $$$$$:   86-block  2
+    $$$$$:   86-block  3
+    $$$$$:   86-block  4
+    $$$$$:   86-block  5
+    $$$$$:   86-block  6
+    $$$$$:   86-block  7
+    $$$$$:   86-block  8
+    $$$$$:   86-block  9
+    $$$$$:   86-block 10
+    $$$$$:   86-block 11
+    $$$$$:   86-block 12
+    $$$$$:   86-block 13
+    $$$$$:   86-block 14
+    $$$$$:   86-block 15
+    $$$$$:   86-block 16
+    $$$$$:   86-block 17
+    $$$$$:   86-block 18
+    $$$$$:   86-block 19
+    $$$$$:   86-block 20
+    $$$$$:   86-block 21
+    $$$$$:   86-block 22
+    $$$$$:   86-block 23
+    $$$$$:   86-block 24
+    $$$$$:   86-block 25
+    $$$$$:   86-block 26
+    $$$$$:   86-block 27
+    $$$$$:   86-block 28
+    $$$$$:   86-block 29
+    $$$$$:   86-block 30
+    $$$$$:   86-block 31
+    $$$$$:   86-block 32
+    $$$$$:   86-block 33
+    $$$$$:   86-block 34
+    $$$$$:   86-block 35
+    $$$$$:   86-block 36
+    $$$$$:   86-block 37
+    $$$$$:   86-block 38
+    $$$$$:   86-block 39
+    $$$$$:   86-block 40
+    $$$$$:   86-block 41
+    $$$$$:   86-block 42
+    $$$$$:   86-block 43
+    $$$$$:   86-block 44
+    $$$$$:   86-block 45
+    $$$$$:   86-block 46
+    $$$$$:   86-block 47
+    $$$$$:   86-block 48
+    $$$$$:   86-block 49
+    $$$$$:   86-block 50
+    $$$$$:   86-block 51
+    $$$$$:   86-block 52
+    $$$$$:   86-block 53
+    $$$$$:   86-block 54
+    $$$$$:   86-block 55
+    $$$$$:   86-block 56
+    $$$$$:   86-block 57
+    $$$$$:   86-block 58
+    $$$$$:   86-block 59
+    $$$$$:   86-block 60
+    $$$$$:   86-block 61
+    $$$$$:   86-block 62
+    $$$$$:   86-block 63
+    $$$$$:   86-block 64
+    $$$$$:   86-block 65
+    $$$$$:   86-block 66

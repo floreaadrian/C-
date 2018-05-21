@@ -1,0 +1,48 @@
+        -:    0:Source:/Users/adrianflorea/Codes/C++/OOP/Lab 5-6/Lab 5-6/Lab 5-6/./UI.h
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1://
+        -:    2://  UI.h
+        -:    3://  Lab 5-6
+        -:    4://
+        -:    5://  Created by Adrian-Paul Florea on 3/25/18.
+        -:    6://  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+        -:    7://
+        -:    8:
+        -:    9:#ifndef UI_h
+        -:   10:#define UI_h
+        -:   11:#include "Controller.h"
+        -:   12:
+function _ZN2UID1Ev called 0 returned 0% blocks executed 0%
+function _ZN2UID2Ev called 0 returned 0% blocks executed 0%
+    #####:   13:class UI {
+    $$$$$:   13-block  0
+    $$$$$:   13-block  1
+        -:   14:private:
+        -:   15:  Controller ctrl;
+        -:   16:
+        -:   17:public:
+function _ZN2UIC1ERK10Controller called 0 returned 0% blocks executed 0%
+function _ZN2UIC2ERK10Controller called 0 returned 0% blocks executed 0%
+    #####:   18:  UI(const Controller &c) : ctrl(c) {}
+    $$$$$:   18-block  0
+    $$$$$:   18-block  1
+        -:   19:
+        -:   20:  void run();
+        -:   21:
+        -:   22:private:
+        -:   23:  static void printMenu();
+        -:   24:  static void printRepositoryMenu();
+        -:   25:  static void printWatchListMenu();
+        -:   26:
+        -:   27:  void addTutorialToRepo();
+        -:   28:  void deleteTutorial(int option);
+        -:   29:  void updateTutorialToRepo();
+        -:   30:  void displayAllTutorials(int option);
+        -:   31:  void addTutorialToWatchlist();
+        -:   32:  void addAllTutorialsByPresentersToWatchlist();
+        -:   33:};
+        -:   34:
+        -:   35:#endif /* UI_h */

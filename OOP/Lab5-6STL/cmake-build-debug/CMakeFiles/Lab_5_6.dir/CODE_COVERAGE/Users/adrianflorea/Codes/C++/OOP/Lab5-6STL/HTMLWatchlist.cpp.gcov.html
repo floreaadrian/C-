@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - hi.info - /Users/adrianflorea/Codes/C++/OOP/Lab5-6STL/HTMLWatchlist.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../index.html">top level</a> - <a href="index.html">Users/adrianflorea/Codes/C++/OOP/Lab5-6STL</a> - HTMLWatchlist.cpp<span style="font-size: 80%;"> (source / <a href="HTMLWatchlist.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">hi.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntry">79</td>
+            <td class="headerCovTableEntryLo">49.4 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2018-05-01 13:42:46</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : //</a>
+<span class="lineNum">       2 </span>            : //  HTMLWatchlist.cpp
+<span class="lineNum">       3 </span>            : //  Lab5-6STL
+<span class="lineNum">       4 </span>            : //
+<span class="lineNum">       5 </span>            : //  Created by Adrian-Paul Florea on 4/23/18.
+<span class="lineNum">       6 </span>            : //  Copyright © 2018 Adrian-Paul Florea. All rights reserved.
+<span class="lineNum">       7 </span>            : //
+<span class="lineNum">       8 </span>            : #include &quot;HTMLWatchlist.h&quot;
+<span class="lineNum">       9 </span>            : #include &lt;fstream&gt;
+<span class="lineNum">      10 </span>            : #include &lt;stdio.h&gt;
+<span class="lineNum">      11 </span>            : #include &lt;string.h&gt;
+<span class="lineNum">      12 </span>            : #include &quot;Utils.h&quot;
+<span class="lineNum">      13 </span>            : #include &quot;RepositoryExceptions.h&quot;
+<span class="lineNum">      14 </span>            : 
+<a name="15"><span class="lineNum">      15 </span>            : using namespace std;</a>
+<span class="lineNum">      16 </span>            : 
+<span class="lineNum">      17 </span>            : void HTMLWatchlist::writeToFile()
+<span class="lineNum">      18 </span>            : {
+<span class="lineNum">      19 </span><span class="lineNoCov">          0 :     ofstream f(this-&gt;filename);</span>
+<span class="lineNum">      20 </span>            : 
+<span class="lineNum">      21 </span><span class="lineNoCov">          0 :     if (!f.is_open())</span>
+<span class="lineNum">      22 </span><span class="lineNoCov">          0 :         throw FileException(&quot;The file could not be opened!&quot;);</span>
+<span class="lineNum">      23 </span>            : 
+<span class="lineNum">      24 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;!DOCTYPE html&gt;\n&quot;;</span>
+<span class="lineNum">      25 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;html&gt;\n&quot;;</span>
+<span class="lineNum">      26 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;head&gt;\n&quot;;</span>
+<span class="lineNum">      27 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;title&gt;Playlist&lt;/title&gt;\n&quot;;</span>
+<span class="lineNum">      28 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;/head&gt;\n&quot;;</span>
+<span class="lineNum">      29 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;body&gt;\n&quot;;</span>
+<span class="lineNum">      30 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;table border=&quot;</span>
+<span class="lineNum">      31 </span><span class="lineNoCov">          0 :       &lt;&lt; &quot;\&quot;&quot;</span>
+<span class="lineNum">      32 </span><span class="lineNoCov">          0 :       &lt;&lt; &quot;1&quot;</span>
+<span class="lineNum">      33 </span><span class="lineNoCov">          0 :       &lt;&lt; &quot;\&quot;&quot;</span>
+<span class="lineNum">      34 </span><span class="lineNoCov">          0 :       &lt;&lt; &quot;&gt;\n&quot;;</span>
+<span class="lineNum">      35 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;tr&gt;\n&quot;;</span>
+<span class="lineNum">      36 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;td&gt;Presenter&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      37 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;td&gt;Title&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      38 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;td&gt;Duration&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      39 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;td&gt;Likes&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      40 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;td&gt;Link&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      41 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;/tr&gt;\n&quot;;</span>
+<span class="lineNum">      42 </span><span class="lineNoCov">          0 :     for (auto s : this-&gt;TutorialInWatch)</span>
+<span class="lineNum">      43 </span>            :     {
+<span class="lineNum">      44 </span><span class="lineNoCov">          0 :         f &lt;&lt; &quot;&lt;tr&gt;\n&quot;;</span>
+<span class="lineNum">      45 </span><span class="lineNoCov">          0 :         f &lt;&lt; &quot;&lt;td&gt;&quot; &lt;&lt; s.getPresenter() &lt;&lt; &quot;&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      46 </span><span class="lineNoCov">          0 :         f &lt;&lt; &quot;&lt;td&gt;&quot; &lt;&lt; s.getTitle() &lt;&lt; &quot;&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      47 </span><span class="lineNoCov">          0 :         f &lt;&lt; &quot;&lt;td&gt;&quot; &lt;&lt; s.getDuration().getMinutes() &lt;&lt; &quot;:&quot; &lt;&lt; s.getDuration().getSeconds() &lt;&lt; &quot;&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      48 </span><span class="lineNoCov">          0 :         f &lt;&lt; &quot;&lt;td&gt;&quot; &lt;&lt; s.getLikes() &lt;&lt; &quot;&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      49 </span><span class="lineNoCov">          0 :         f &lt;&lt; &quot;&lt;td&gt;\n&lt;a href=\&quot;&quot; &lt;&lt; s.getSource() &lt;&lt; &quot;\&quot;&gt;Link&lt;/a&gt;\n&lt;/td&gt;\n&quot;;</span>
+<span class="lineNum">      50 </span><span class="lineNoCov">          0 :         f &lt;&lt; &quot;&lt;/tr&gt;\n&quot;;</span>
+<span class="lineNum">      51 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">      52 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;/table&gt;\n&quot;;</span>
+<span class="lineNum">      53 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;/body&gt;\n&quot;;</span>
+<span class="lineNum">      54 </span><span class="lineNoCov">          0 :     f &lt;&lt; &quot;&lt;/html&gt;\n&quot;;</span>
+<span class="lineNum">      55 </span><span class="lineNoCov">          0 :     f.close();</span>
+<a name="56"><span class="lineNum">      56 </span><span class="lineNoCov">          0 : }</span></a>
+<span class="lineNum">      57 </span>            : 
+<span class="lineNum">      58 </span>            : string toModify(const string &amp;s,const string &amp;to,int newPos=4){
+<span class="lineNum">      59 </span><span class="lineCov">         10 :     string result(trim(s));</span>
+<span class="lineNum">      60 </span><span class="lineCov">         10 :     result.erase(0, newPos);</span>
+<span class="lineNum">      61 </span><span class="lineCov">         10 :     size_t pos = result.find_last_not_of(to);</span>
+<span class="lineNum">      62 </span><span class="lineCov">         10 :     if (pos != std::string::npos)</span>
+<span class="lineNum">      63 </span><span class="lineCov">         20 :         result.erase(pos + 1);</span>
+<span class="lineNum">      64 </span><span class="lineCov">         10 :     if(to==&quot;&quot;)</span>
+<span class="lineNum">      65 </span><span class="lineCov">          4 :         result.erase(result.size()-10);</span>
+<span class="lineNum">      66 </span>            :     //cout &lt;&lt; result &lt;&lt; &quot;\n&quot;;
+<span class="lineNum">      67 </span><span class="lineCov">         10 :     return result;</span>
+<a name="68"><span class="lineNum">      68 </span><span class="lineCov">         20 : }</span></a>
+<span class="lineNum">      69 </span>            : 
+<span class="lineNum">      70 </span>            : void HTMLWatchlist::readFromFile()
+<span class="lineNum">      71 </span>            : {
+<span class="lineNum">      72 </span><span class="lineCov">          1 :     ifstream file(this-&gt;filename);</span>
+<span class="lineNum">      73 </span>            : 
+<span class="lineNum">      74 </span><span class="lineCov">          2 :     if (!file.is_open())</span>
+<span class="lineNum">      75 </span><span class="lineNoCov">          0 :         throw FileException(&quot;The file could not be opened!&quot;);</span>
+<span class="lineNum">      76 </span><span class="lineCov">          1 :     string s;</span>
+<span class="lineNum">      77 </span><span class="lineCov">         30 :     for (int i = 0; i &lt; 14; ++i)</span>
+<span class="lineNum">      78 </span><span class="lineCov">         28 :         getline(file, s);</span>
+<span class="lineNum">      79 </span>            : 
+<span class="lineNum">      80 </span><span class="lineCov">         18 :     while (file &gt;&gt; s &amp;&amp; s != &quot;&lt;/table&gt;&quot;)</span>
+<span class="lineNum">      81 </span>            :     {
+<span class="lineNum">      82 </span><span class="lineCov">          2 :         string presenter, title, source, duration;</span>
+<span class="lineNum">      83 </span>            :         double minutes, secundes;
+<span class="lineNum">      84 </span>            :         int likes;
+<span class="lineNum">      85 </span><span class="lineCov">          2 :         string toRead;</span>
+<span class="lineNum">      86 </span><span class="lineCov">          2 :         getline(file, toRead);</span>
+<span class="lineNum">      87 </span><span class="lineCov">          2 :         getline(file, toRead);</span>
+<span class="lineNum">      88 </span><span class="lineCov">          6 :         presenter = toModify(toRead, &quot;&lt;/td&gt;&quot;);</span>
+<span class="lineNum">      89 </span>            : 
+<span class="lineNum">      90 </span><span class="lineCov">          2 :         getline(file, toRead);</span>
+<span class="lineNum">      91 </span><span class="lineCov">          6 :         title = toModify(toRead, &quot;&lt;/td&gt;&quot;);</span>
+<span class="lineNum">      92 </span>            : 
+<span class="lineNum">      93 </span><span class="lineCov">          2 :         getline(file, toRead);</span>
+<span class="lineNum">      94 </span><span class="lineCov">          6 :         duration = toModify(toRead, &quot;&lt;/td&gt;&quot;);</span>
+<span class="lineNum">      95 </span><span class="lineCov">          2 :         vector&lt;string&gt; durationTokens = tokenize(duration, ':');</span>
+<span class="lineNum">      96 </span><span class="lineCov">          6 :         minutes = stod(durationTokens[0]);</span>
+<span class="lineNum">      97 </span><span class="lineCov">          6 :         secundes = stod(durationTokens[1]);</span>
+<span class="lineNum">      98 </span>            : 
+<span class="lineNum">      99 </span><span class="lineCov">          2 :         getline(file, toRead);</span>
+<span class="lineNum">     100 </span><span class="lineCov">          8 :         likes = stoi(toModify(toRead, &quot;&lt;/td&gt;&quot;));</span>
+<span class="lineNum">     101 </span><span class="lineCov">          2 :         getline(file,toRead);</span>
+<span class="lineNum">     102 </span><span class="lineCov">          2 :         getline(file, toRead);</span>
+<span class="lineNum">     103 </span><span class="lineCov">          6 :         source = toModify(toRead, &quot;&quot;,9);</span>
+<span class="lineNum">     104 </span><span class="lineCov">          2 :         getline(file,toRead);</span>
+<span class="lineNum">     105 </span><span class="lineCov">          4 :         Tutorial tut{presenter, title, Duration{minutes, secundes}, likes, source};</span>
+<span class="lineNum">     106 </span>            : 
+<span class="lineNum">     107 </span><span class="lineCov">          2 :         getline(file, toRead);</span>
+<span class="lineNum">     108 </span><span class="lineCov">          2 :         this-&gt;TutorialInWatch.push_back(tut);</span>
+<span class="lineNum">     109 </span><span class="lineCov">          2 :     }</span>
+<span class="lineNum">     110 </span>            : 
+<span class="lineNum">     111 </span><span class="lineCov">          1 :     file.close();</span>
+<a name="112"><span class="lineNum">     112 </span><span class="lineCov">          1 : }</span></a>
+<span class="lineNum">     113 </span>            : 
+<span class="lineNum">     114 </span>            : void HTMLWatchlist::displayWatchlist() const
+<span class="lineNum">     115 </span>            : {
+<span class="lineNum">     116 </span><span class="lineNoCov">          0 :     string aux = &quot;\&quot;&quot; + this-&gt;filename + &quot;\&quot;&quot;; // if the path contains spaces, we must put it inside quotations</span>
+<span class="lineNum">     117 </span><span class="lineNoCov">          0 :     string link = &quot;open -a Safari &quot; + aux;</span>
+<span class="lineNum">     118 </span><span class="lineNoCov">          0 :     system(link.c_str());</span>
+<span class="lineNum">     119 </span><span class="lineNoCov">          0 : }</span>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
